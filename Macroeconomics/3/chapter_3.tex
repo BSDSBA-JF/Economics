@@ -1,0 +1,149 @@
+\documentclass{extarticle}
+\sloppy
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PACKAGES            																						  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[10pt]{extsizes}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+\usepackage{microtype} 
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{commath}
+\usepackage[margin=1in]{geometry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PROBLEM ENVIRONMENT         																			           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems, breakable, skins}
+\newtcbtheorem{prob}% environment name
+              {Problem}% Title text
+  {enhanced, % tcolorbox styles
+  attach boxed title to top left={xshift = 4mm, yshift=-2mm},
+  colback=blue!5, colframe=black, colbacktitle=blue!3, coltitle=black,
+  boxed title style={size=small,colframe=gray},
+  fonttitle=\bfseries,
+  separator sign none
+  }%
+  {} 
+\newenvironment{problem}[1]{\begin{prob*}{#1}{}}{\end{prob*}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% THEOREMS/LEMMAS/ETC.         																			  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{thm}{Theorem}
+\newtheorem*{thm-non}{Theorem}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{corollary}[thm]{Corollary}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MY COMMANDS   																						  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\bigO}{\mathcal{O}}
+\newcommand{\Real}{\mathcal{Re}}
+\newcommand{\poly}{\mathcal{P}}
+\newcommand{\mat}{\mathcal{M}}
+\DeclareMathOperator{\Span}{span}
+\newcommand{\Hom}{\mathcal{L}}
+\DeclareMathOperator{\Null}{null}
+\DeclareMathOperator{\Range}{range}
+\newcommand{\defeq}{\vcentcolon=}
+\newcommand{\restr}[1]{|_{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION NUMBERING																				           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand\thesection{\Alph{section}:}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DOCUMENT START              																			           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\vspace{-2em}Chapter 3: The Goods Market}
+\author{\emph{Summary}, by JF Viray}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION A            																			           
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Composition of GDP $(Y)$}
+We decompose GDP into four main types and an extra one:
+\begin{enumerate}
+  \item Consumption ($C$) - Goods and services purchased by consumers
+  \item Investment ($I$) - Sum of nonresidential and residential investment
+  \item Government Spending ($G$) - Government transfers are not included
+  \item Net Exports ($NX \equiv X - IM$) where $X$ and $IM$ denotes exports and imports, respectively.
+  \item Inventory Investment - This is the weirdest one because most of the time, we only have inventory investment because of terrible planning. Some of the goods produced in a given year are not sold in that year but in later years. Those extra items are held as inventory investment, but this is NOT the same as investment $I$.
+\end{enumerate}
+
+\section{Demand for Goods ($Z$)}
+We define the demand for goods as:
+$$Z \equiv C + I + G + X - IM$$
+
+\noindent For now, we will assume that we are in a closed economy, that is, $X = IM = 0$, so $Z = C + I + G$. Now, we will try to define how consumption ($C$), investment ($I$), and government spending ($G$) behave. For consumption, it is a function on income, and specifically disposable income. 
+$$ C = C \bigl( \underset{(+)}{Y_D} \bigr)$$
+We then assume a linear relation between consumption and disposable income as
+$$C = c_0 + c_1 Y_D$$
+where $c_1 \in [0, 1)$ as the marginal propencity to consume and $c_0$ as autonomous consumption. We then define disposable income ($Y_D$) as $$Y_D \equiv Y - T $$ where $T$ denotes taxes. We can finally have that 
+$$C = c_0 + c_1 (Y - T)$$ 
+
+For investment ($I$) and government spending ($G$), we will assume for now that they are taken as a given. We will use a bar to denote given values, except for government spending ($G$) and taxes ($T$). We now have:
+$$I = \overline{I}$$.
+
+\noindent Overall, demand ($Z$) can be written as:
+$$Z = c_0 + c_1(Y-T) + \overline{I} + G$$
+
+\section{Equilibrium in the Goods Market ($Y = Z$)}
+Now, we have aggregate supply ($Y$) and aggregate demand ($Z$). Let us assume that inventory investment is 0, so everything produced is also demanded. We have an equilibrium in the goods market that requires production $Y$ equal to the demand of goods $Z$, that is, $$Y = Z.$$
+We can then substitute $Z = c_0 + c_1(Y-T) + \overline{I} + G$ to get:
+$$Y = c_0 + c_1(Y-T) + \overline{I} + G$$
+
+\noindent First, we have to recall that output ($Y$) can be viewed as both production and income. In the equation above, the left side refers to output ($Y$) as production and for the right side, output ($Y$) as income. Now, don't be scared to ask Prof. Florian about this because it does get confusing, but we now see that as demand ($Z$) increases, production ($Y$) increases by the equilibrium of productions = demand. Additionally, because production and income are just two different ways to view output, income ($Y$) must also increase. But the increase in income leads to more people having more to spend and thus an increase in demand, and now we have a cycle of growth with a multiplier effect. We will see this algebraically by isolating Y:
+
+$$
+Y = \underbrace{\frac{1}{1 - c_1}}_{\text{multiplier}}
+    \;\underbrace{(c_0 + \overline{I} + G - c_1 T)\vphantom{\frac{1}{1-c_1}}}_{\text{autonomous spending}}
+$$
+
+\section{Another Way of Seeing Equilibrium ($I = S$)}
+Another way to think of the equilibrium in the goods market asides from that production equals demand is to think of it as investment equals savings.
+\begin{proof}
+  Let savings ($S$) be the sum of private and public savings where private savings ($S_{\text{priv}}$) is
+  $$S_{\text{priv}} = Y_D - C = Y - T - C.$$
+  While for public savings, it is the difference of taxes and government consumption, so $S_{\text{public}} = T - G$. Suppose that production equals demand, so $Y = C + I + G$. Then subtract both sides by $T$ and transpose $C$ to get
+  $$ Y - T - C = I + G - T.$$
+  Notice that the left hand side is just private savings ($S_{\text{priv}} = Y - T - C$). By substitution, we have
+  $$S_{\text{priv}} = I + G - T$$
+  Isolate investments ($I$) to eventually get that it is equal to savings ($S$).
+  \begin{align*}
+    I &= S_{\text{priv}} + (T - G) \\
+    &= S_{\text{priv}} + S_{\text{public}} \\
+    &= S
+  \end{align*}
+  We thus have that $Y = Z \implies I = S$. The converse direction of $I = S \implies Y = Z$ is left as an exercise to the reader.
+\end{proof}
+
+Let us look more into savings. First is that given we know our disposable income, if we know our consumption, then we should also know our private savings. We can then have:
+\begin{align*}
+  S &= Y - T - C \\
+    &= Y - T - (c_0 + c_1(Y-T)) \\
+    &= -c_0 + \underbrace{(1-c_1)}_{\mathclap{\text{marginal propensity to save}}}(Y-T)
+\end{align*}
+
+This strengthens the point that if you know your propensity to consume or $c_1 \in [0, 1)$, then you already also know your propensity to save or $1-c_1$.
+\end{document}

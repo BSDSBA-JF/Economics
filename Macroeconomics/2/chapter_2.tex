@@ -1,0 +1,138 @@
+\documentclass{extarticle}
+\sloppy
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PACKAGES            																						  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[10pt]{extsizes}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+\usepackage{microtype} 
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{commath}
+\usepackage[margin=1in]{geometry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PROBLEM ENVIRONMENT         																			           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems, breakable, skins}
+\newtcbtheorem{prob}% environment name
+              {Problem}% Title text
+  {enhanced, % tcolorbox styles
+  attach boxed title to top left={xshift = 4mm, yshift=-2mm},
+  colback=blue!5, colframe=black, colbacktitle=blue!3, coltitle=black,
+  boxed title style={size=small,colframe=gray},
+  fonttitle=\bfseries,
+  separator sign none
+  }%
+  {} 
+\newenvironment{problem}[1]{\begin{prob*}{#1}{}}{\end{prob*}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% THEOREMS/LEMMAS/ETC.         																			  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{thm}{Theorem}
+\newtheorem*{thm-non}{Theorem}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{corollary}[thm]{Corollary}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MY COMMANDS   																						  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\bigO}{\mathcal{O}}
+\newcommand{\Real}{\mathcal{Re}}
+\newcommand{\poly}{\mathcal{P}}
+\newcommand{\mat}{\mathcal{M}}
+\DeclareMathOperator{\Span}{span}
+\newcommand{\Hom}{\mathcal{L}}
+\DeclareMathOperator{\Null}{null}
+\DeclareMathOperator{\Range}{range}
+\newcommand{\defeq}{\vcentcolon=}
+\newcommand{\restr}[1]{|_{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION NUMBERING																				           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand\thesection{\Alph{section}:}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DOCUMENT START              																			           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\vspace{-2em}Chapter 2: A Tour of the Book}
+\author{\emph{Summary}, by JF Viray}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION A            																			           
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Defining Aggregate Output $(Y)$}
+We measure aggregate output or GDP as a flow variable $Y$ through two ways.
+\begin{enumerate}
+	\item Production Side
+	\begin{enumerate}
+		\item $Y \equiv$ Sum of the Value of Final Goods and Services in a given period
+		\item $Y \equiv $ Sum of the Value Added in the Economy in a given period
+	\end{enumerate}
+	\item Income Side
+	\begin{enumerate}
+		\item $Y \equiv$ Sum of Labor and Capital Incomes in a given period
+	\end{enumerate}
+\end{enumerate} 
+
+\noindent When looking at GDP, all the money that was used in producing will be money used to give money to labor or in capital.  
+$$\text{Production} = \text{Income}$$
+
+\noindent But, we also have the problem that prices just increase in general, so we have to differentiate between nominal GDP ($\$Y_t$) and real GDP($Y_t$) for some year $t$. We then focus on the rate of growth of real GDP, called GDP growth. If positive, then the period is called an expansion. While if the period had negative GDP growth, then it is called a recession. We define GDP Growth in year $t$ as:
+$$\text{GDP Growth} = \frac{Y_t - Y_{t-1}}{Y_{t-1}}$$
+
+\section{Defining Unemployment Rate $(u)$}
+Employment ($N$) is the number of people who have a job. Unemployment ($U$) is the number of people who do not have a job but are looking for one. The labor force ($L$) is the sum of employment and unemployment. We have
+$$L = N + U$$
+We define the unemployment rate $u$ as $u \equiv \frac{U}{L}$. We care about unemployment because
+\begin{enumerate}
+	\item High unemployment worsens the situation for those already unemployed.
+	\item High unemployment rate means that the economy is not using some of its resources
+\end{enumerate}
+
+\section{Defining Inflation Rate $(\pi)$}
+Inflation is a sustained rise in the general level of prices. The inflation rate is the rate at which the price level increases. We measure preasure level in terms of:
+\begin{enumerate}
+	\item GDP Deflator ($P_t$) is to look at the set of goods produced in the economy. It is measured as the ratio of nominal GDP to real GDP in year $t$:
+	$$P_t \equiv \frac{\$Y_t}{Y_t} $$
+	By the defintion of the inflation rate ($\pi_t$) for year $t$, we define it as:
+	$$\pi_t \equiv \frac{P_t - P_{t-1}}{P_{t-1}}$$
+	\item Consumer Price Index (CPI) is to look at the set of goods purchased by consumers. Generally, CPI follows closely GDP deflator, so when we talk about price level $P_t$, we don't need to differentiate GDP deflator or CPI. 
+\end{enumerate}
+We care about inflation because (i) when prices of good increases, the wages don't increase at the same rate and (ii) inflation leads to other distortions such as regulations and taxes lagging in relation to inflation.
+
+\section{Using the Big Three ($Y, u, \pi$)}
+We will use the big three (output, unemployment, and inflation rate) through Okun's Law and the Philipps Curve. Okun's Law states that output $Y$ is directly proportional to unemployement $u$. So, if output $Y$ increases/decreases, then unemployment $u$ increases/decreases too. However, we also have from the Philipps Curve that low unemployment implies high rate of inflation. Thus, we can have that if a government tries to increase its spending, we have:
+
+$$\Delta Y^+ \underbrace{\implies}_{\text{Okun's Law}} \Delta u^- \underbrace{\implies}_{\text{Philipps Curve}} \Delta \pi^+$$ 
+
+But we already said that we don't have too high of inflation. Thus, for any government, they should be able to balance the increase in output and also the increase of the inflation rate. A successful economy is an economy that combines high output growth, low
+unemployment, and low inflation
+
+\section{The Short, Medium, and Long Run}
+\begin{enumerate}
+	\item In the short run, everything is determined by demand.
+	\item In the medium run, we look more into the supply factors.
+	\item In the long run, it's about growth rates through productivity and other things.
+\end{enumerate}
+\end{document}

@@ -1,0 +1,126 @@
+\documentclass{extarticle}
+\sloppy
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PACKAGES            																						  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[10pt]{extsizes}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+\usepackage{microtype} 
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{commath}
+\usepackage[margin=1in]{geometry}
+\usepackage{float}
+\usepackage{cancel}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{enumitem}
+\usepackage{textcomp}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PROBLEM ENVIRONMENT         																			           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems, breakable, skins}
+\newtcbtheorem{prob}% environment name
+              {Problem}% Title text
+  {enhanced, % tcolorbox styles
+  attach boxed title to top left={xshift = 4mm, yshift=-2mm},
+  colback=blue!5, colframe=black, colbacktitle=blue!3, coltitle=black,
+  boxed title style={size=small,colframe=gray},
+  fonttitle=\bfseries,
+  separator sign none
+  }%
+  {} 
+\newenvironment{problem}[1]{\begin{prob*}{#1}{}}{\end{prob*}}
+
+\newenvironment{question}
+  {\begin{tcolorbox}[colframe=green!50!black, colback=green!5!white, 
+     title={Question \includegraphics[width=0.5cm]{Solved.png}}]}
+  {\end{tcolorbox}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% THEOREMS/LEMMAS/ETC.         																			  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{thm}{Theorem}
+\newtheorem*{thm-non}{Theorem}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{corollary}[thm]{Corollary}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MY COMMANDS   																						  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\bigO}{\mathcal{O}}
+\newcommand{\Real}{\mathcal{Re}}
+\newcommand{\poly}{\mathcal{P}}
+\newcommand{\mat}{\mathcal{M}}
+\DeclareMathOperator{\Span}{span}
+\newcommand{\Hom}{\mathcal{L}}
+\DeclareMathOperator{\Null}{null}
+\DeclareMathOperator{\Range}{range}
+\newcommand{\defeq}{\vcentcolon=}
+\newcommand{\restr}[1]{|_{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION NUMBERING																				           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand\thesection{\Alph{section}:}
+\renewcommand\thesubsection{\Alph{section}.\arabic{subsection}}
+\renewcommand\thesubsubsection{\Alph{section}.\arabic{subsection}.\arabic{subsubsection}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DOCUMENT START              																			           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\vspace{-2em}Chapter 9: Openness in Goods and Financial Markets}
+\author{\emph{Summary}, by JF Viray}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Openness in the Goods Market}
+For this chapter, let us always assume that our home country is the USA, and the foreign country is the UK. 
+
+\subsection{Nominal Exchange Rates}
+The \textbf{nominal exchange rate $E$} is the price of the domestic currency in terms of foreign currency. 
+Terminology here will be confusing, so follow slowly. When we deal with exchange rates, it is in terms of a ratio of foreign currency to home currency, which can be represented as a fraction. We have the home currency as the denominator, and the foreign currency as the numerator. 
+
+As an example, suppose that for every dollar, you can trade it for 0.79 pounds. As a ratio, it is written as $0.79 \pounds : 1 \$$. As a fraction, we write it as $E = \frac{0.79 \pounds}{1 \$}$. 
+An equivalent way of saying this is \textit{the dollar price of the UK pound is 0.79}. This just means that for the exchange rate $E$, the US dollar is the denominator and the UK pound is the numerator, and we get $E = \frac{0.79 \pounds}{1 \$}$.
+
+Exchange rates between the dollar and most foreign currencies are determined in foreign exchange markets and change every day. 
+These changes are called nominal appreciations or nominal depreciations—appreciations or depreciations for short. Let's define the two types:
+\begin{enumerate}
+    \item An appreciation of the domestic currency against a foreign currency is defined as an increase in the price of the domestic currency in terms of the foreign currency. This means we have an increase in the exchange rate $E$.
+    For example, if we start with $E = \frac{0.79 \pounds}{1 \$}$ and we then have an appreciation of the dollar agaisnt the pound, the new exchange rate could look like $E' = \frac{2 \pounds}{1 \$}$.
+    \item A depreciation of the domestic currency agaisnt a foreign currency is defined as a decrease in the price of the domestic currency in terms of the foreign currency. This means we have a decrease in the exchange rate $E$.
+    If we start with $E = \frac{0.79 \pounds}{1 \$}$ and we then have a depreciation of the dollar agaisnt the pound, the new exchange rate could look like $E' = \frac{0.5 \pounds}{1 \$}$.
+\end{enumerate}
+
+Let us practice what we have learned because honestly, the terminology is confusing.
+\begin{question}
+A nominal appreciation of the Japanese yen (against all currencies) indicates that:
+
+\begin{enumerate}[label=\Alph*)]
+    \item the yen price of the U.S. dollar has increased.
+    \item the yen price of the U.K. pound has increased.
+    \item the number of units of foreign currency that one can obtain with one yen has increased.
+    \item all of these
+\end{enumerate}
+\textit{Answer.} Let's just have concrete numbers for the exchange rate. Let $E = \frac{1 \text{\textyen}}{1 \$}$. We say that the yen price of the US dollar is $1 \text{\textyen}$. Let us now have an appreciation of the yen agaisnt all currencies, so the new exchange rate could be $E' = \frac{2 \text{\textyen}}{1 \$}$. This means that the yen price of the US dollar is $2 \text{\textyen}$. Clearly, the yen price of the US dollar has increased. Following the same logic, the yen price of the UK pound has also increased. For the option C, we see that after the appreciation of the yen, we can get more  per dollar, you
+\end{question}
+
+
+\subsection{Real Exchange Rates}
+\section{Openness in Financial Markets}
+
+\end{document}
