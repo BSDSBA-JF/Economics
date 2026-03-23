@@ -1,0 +1,572 @@
+/* Start of styles copied from as_2012/gradebook.css  */
+
+.gbtable_header div.gbText,
+.gbtable thead div.gbText {
+    text-shadow: none;
+}
+
+.gbtable,
+.gbtable_header {
+    width: 100%;
+}
+
+
+/* @group ORGANIZE COLUMNS (Gradebook)
+ ----------------------------------------------- */
+
+
+/*-- PULLDOWN MENUS IN A SECONDARY ACTION BAR ON GRADE CENTER'S MAIN PAGE---*/
+
+.selectList {
+    list-style: none;
+    margin: 0 6px 0 0;
+    padding: 0;
+    float: left;
+    z-index: 100;
+}
+
+.selectList li {
+    float: left;
+    margin: 0 4px 0 0;
+    z-index: 101;
+}
+
+.selectList .sub a {
+    display: block;
+    text-decoration: none;
+}
+
+.selectList .sub:hover ul {
+    left: 0;
+    top: 20px!important;
+}
+
+.selectList .sub ul li {
+    float: none;
+    position: static!important;
+    margin: 0;
+    padding: 0;
+}
+
+.selectList .sub ul li h4 {
+    color: #888;
+    margin: 0;
+    padding: 6px 0 0 3px;
+    font-weight: bold;
+    font-size: 90%;
+    display: block;
+    border-bottom: 1px solid #ccc;
+}
+
+.selectList .sub ul li h4 {
+    width: 152px
+}
+
+.selectList .sub ul li a,
+.selectList .sub ul li a:hover,
+.selectList .sub ul li a:focus {
+    background-image: none;
+    padding-left: 18px!important;
+}
+
+.selectList .sub a #currentView,
+.selectList .sub a #currentSortBy,
+.selectList .sub a #currentColSortDir {
+    background-image: none
+}
+
+ul.selectList li.sub ul li.current a,
+ul.selectList li.sub ul li.current a:hover,
+.nav .sub .current a,
+.nav .sub .current a:hover,
+.nav .sub .current.favorite a,
+.nav .sub .current.favorite a:hover {
+    background-color: #f9f9f9;
+    background-image: url(/images/ci/icons/current_li.png)!important;
+    background-repeat: no-repeat;
+    background-position: 2px center;
+}
+
+
+/*================ GRADEBOOK "ORGANIZE COLUMNS" PAGE ==============================================*/
+
+div.staticFooter div.details,
+div.staticHeader div.details {
+    margin-left: 18px
+}
+
+div.staticHeader {
+    margin: 10px 0 0 0
+}
+
+div.staticFooter div.details {
+    border-bottom: 1px solid #ddd!important
+}
+
+.gbColumns_rumble,
+.gbColumns_rumble_bottom {
+    margin-left: 38px!important;
+    border: 1px solid #ddd!important;
+    border-bottom: 0!important;
+}
+
+.gbColumns_rumble_bottom {
+    border: 1px solid #ddd!important;
+    border-top: 0!important;
+}
+
+.staticHeader,
+.staticFooter {
+    clear: both;
+    position: relative;
+    zoom: 1;
+}
+
+.staticHeader div.itemHeaderControl,
+.staticFooter div.itemHeaderControl,
+ul.gbCategories li div.itemHeaderControl {
+    right: 0
+}
+
+.staticHeader div.itemHeaderControl,
+.staticFooter div.itemHeaderControl,
+ul.gbCategories li div.itemHeaderControl {
+    right: 0;
+    top: 0;
+}
+
+.staticHeader div.itemHeaderControl a,
+.staticFooter div.itemHeaderControl a,
+ul.gbCategories li div.itemHeaderControl a {
+    display: inline-block
+}
+
+ul.dragableHighlight {
+    background: #fff;
+    border-top: 1px dashed #999;
+    border-bottom: 1px dashed #999;
+    padding: 12px 12px 3px 12px;
+    margin: 12px -30px;
+}
+
+ul.gbCategories li h3.item,
+div.staticHeader h3.item,
+div.staticFooter h3.item {
+    padding: 6px 6px 18px 0
+}
+
+ul.gbCategories li h3.item a.toggleLink,
+div.staticHeader h3.item a.toggleLink,
+div.staticFooter h3.item a.toggleLink {
+    margin-right: 6px;
+    margin-top: -2px;
+}
+
+div.areaHighlight div.container {
+    background: #f9f9f9
+}
+
+ul.dragableHighlight li h3.item,
+.dragableHighlight div.details {
+    border-color: #999
+}
+
+
+/* @end ORGANIZE COLUMNS*/
+
+.gbtable_header tr.rowhigh th,
+.gbtable thead tr.rowhigh th {
+    color: #666 !important;
+    background-color: #FFF !important;
+}
+
+.gbtable_header thead tr th.sortedDown {
+    background-position: center 30px;
+}
+
+.gbtable_header thead tr th.sortedUp {
+    background-position: center 5px;
+}
+
+.gbtable_header div.gbText, 
+.gbtable thead div.gbText {
+    padding-top: 3px;
+}
+
+.gbtable_header div.gbText,
+.gbtable thead div.gbText {
+    text-shadow: none;
+}
+
+.gbtable div,
+.gbtable_header div {
+    color: #666 !important;
+    font-weight: normal;
+    text-shadow: none;
+}
+
+.gbtable_header th,
+.gbtable thead th {
+    background-color: #FFF !important;
+    color: #333333 !important;
+    border: 0px !important;
+    text-transform: uppercase;
+    border-right: 1px solid #cdcdcd !important;
+}
+
+
+/* End of styles copied from as_2012/gradebook.css  */
+
+.gbtable tbody tr td,
+.gbtable tbody tr th,
+.gbtable_header th,
+.gbtable thead th {
+    padding: 8px !important;
+    height: auto !important;
+}
+
+.tabletLabel {
+    display: none;
+}
+
+.contentPane .gbtable tbody tr th.checkcol,
+.contentPane .gbtable_header thead tr th.checkcol {
+    width: 21px;
+}
+
+.contcollapsed.contentPane .gbtable_header thead tr th.checkcol {
+    width: 18px;
+}
+
+/* commentDiv position tewak for 2016 theme */
+
+.gc_info,
+.comments {
+    position: absolute;
+}
+
+.inlineGrader.maximized {
+    margin: 0px;
+    width: calc(100% - 1px);
+}
+
+/* alignment fixes for column stats page */
+
+.view-column-stats .steptitle {
+    background: transparent;
+}
+
+.view-column-stats #step1 {
+    max-width: 80%;
+    margin: 20px auto 40px auto;
+}
+
+/* 100% gradebook width for 2016 theme*/
+#expandGradebookButton {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 30px;
+    width: 30px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+    -webkit-transition: all .8s;
+    -moz-transition: all .8s;
+    transition: all .8s;
+}
+
+#expandGradebookButton.maximizer_btn {
+    background-image: url("../../images/maximizer-icon.png");
+}
+
+#expandGradebookButton.minimize-gradebook {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+
+.expandable-grade-book-grid {
+    -webkit-transition: all .8s;
+    -moz-transition: all .8s;
+    transition: all .8s;
+}
+
+.expanded-gradebook {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 9999;
+    padding: 20px 0px;
+    margin: 0px;
+    -webkit-transition: all .8s;
+    -moz-transition: all .8s;
+    transition: all .8s;
+    background: #fff;
+}
+
+.expanded-gradebook .contentPane .gbtable_header thead tr th.checkcol {
+    width: 22px;
+}
+
+/* let entire title be seen in header*/
+.gbtable_header div {
+    overflow: visible;
+    white-space: normal;
+}
+
+.gbtable_header th .contextMenuContainer, .gbtable_header th .contextMenuContainer {
+    position: absolute;
+    top: 0px;
+    right: -10px;
+}
+
+.gbtable_header div.gbData {
+    max-width: 90px;
+    word-break: break-word;
+}
+
+@media only screen and (min-width:1270px) {
+    .contcollapsed.contentPane .gbtable_header thead tr th.checkcol {
+        width: 16px;
+    }
+}
+
+.contcollapsed.contentPane .gbtable tbody tr th.checkcol {
+    width: 16px;
+}
+
+@media only screen and (min-width:320px) and (max-width:1037px) {
+    
+    #expandGradebookButton.maximizer_btn {
+        visibility: hidden;
+    }
+
+    .mobile-table-label {
+        display: block;
+        float: left;
+        margin-right: 10px;
+    }
+
+    #nonAccessibleTableDiv {
+        padding-bottom: 60px;
+    }
+
+    .gbtable_header {
+        overflow: scroll;
+        margin: 0px 0px 19px 0px;
+        border: 1px solid #eee;
+        box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.14);
+        font-size: 10px;
+        display: block;
+        width: 100%;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .gbtable,
+    .gbtable tbody,
+    .gbtable th,
+    .gbtable td,
+    .gbtable tr,
+    .inventory,
+    .inventory tbody,
+    .inventory th,
+    .inventory td,
+    .inventory tr {
+        display: block;
+    }
+
+
+    .gbtable div.gbView,
+    .gbtable div.gbView {
+        width: 100%;
+        text-align: right;
+        overflow: hidden;
+        height: 30px;
+    }
+
+    .gbtable div.gbEdit,
+    .gbtable div.gbEdit {
+        position: absolute;
+        right: 0px;
+        overflow: visible;
+        margin-right: 45px;
+        height: 30px;
+    }
+
+    .gbtable div.gbEdit input,
+    .gbtable div.gbEdit input {
+        text-align: right;
+        position: absolute;
+        z-index: 9999;
+        top: 0px;
+    }
+
+    tr.focusRowHigh td {
+        background: #fff;
+    }
+
+    .inventoryListHead {
+        display: none;
+    }
+    
+    .inventory>tbody tr td, .inventory>tbody tr th {
+        width: auto;
+    }
+    .inventory {
+        width: 100%;
+    }
+    .gbtable thead {
+        display: none
+    }
+
+    .gbtable tr, .inventory tr {
+        border: 1px solid #ccc;
+        box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.14);
+        margin-bottom: 30px;
+        width: 97.7%;
+    }
+
+    .gbtable tbody tr td,
+    .gbtable tbody tr th  {
+        border: 0;
+        border-bottom: 1px solid #eee;
+        width: auto;
+        font-size: 15px;
+    }
+
+    .gbtable_header tr th {
+        font-size: 15px;
+    }
+
+    .gbtable td div,
+    .gbtable th div,
+    .gbtable td.cellclick div.gbView,
+    .gbtable th.cellclick div.gbText,
+    .gbtable td.cellhigh div.gbView,
+    .gbtable_header th.cellhigh div.gbView,
+    .gbtable th.cellhigh div.gbView {
+        width: 100%;
+    }
+
+    .gbtable td a.cmimg,
+    .gbtable th a.cmimg,
+    .gbtable_header th a.cmimg {
+        display: block;
+    }
+    .gbtable th.cellhighNoCM .contextMenuContainer a.cmimg,
+    .gbtable td.cellhighNoCM .contextMenuContainer a.cmimg {
+        display: none;
+    }
+    .gbtable tbody tr th.checkcol,
+    .gbtable_header thead tr th.checkcol,
+    .contcollapsed.contentPane .gbtable tbody tr th.checkcol {
+        height: 30px;
+        width: auto;
+    }
+
+    .gbtable td.cellClick div.gbText,
+    .gbtable div.gbText,
+    .gbtable td.cellhigh div.gbText {
+        width: 45%;
+        text-align: right;
+        float: right;
+        margin-right: 56px;
+    }
+
+    a.titleAnchor .gmodified{
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+        left: 98%;
+    }
+
+    .gbtable th.checkcol input, .gbtable_header th.checkcol input {
+        width: 30px;
+        height: 30px;
+        border-radius: 6px;
+    }
+
+    .gbtable .contextMenuContainer {
+        position: absolute;
+        right: 10px;
+        display: block;
+    }
+
+    .rumble_top .nav {
+        width: 600px;
+        font-size: 12px;
+        margin-bottom: 10px
+    }
+
+    tbody tr.rowhigh td {
+        background: #fff;
+    }
+
+    tr td.cellhigh,
+    tr td.cellhighNoCM {
+        background-color: #fff;
+    }
+
+    tbody tr.rowhigh th {
+        background-color: #eee;
+    }
+
+    .titleAnchor {
+        display: inline-block;
+         font-weight: 600;
+    }
+
+    .gbtable div .tabletLabel {
+        display: inline-block;
+        width: 30% !important;
+        float: left;
+        margin-right: 5px;
+        padding-top: 1px;
+        text-align: left;
+    }
+
+    .cellHighNoCM .contextMenuContainer img {
+        display: none;
+    }
+    div.noLabelField div.cumulativeSelectItems > div {
+        position: relative;
+    }
+
+    .cumulativeSelectItems .cumul_arrows {
+        position: absolute;
+        right: 30px;
+        padding-top: 4em
+    }
+
+    .cumulativeSelectItems .cumul_arrows a img {
+        height: 25px
+    }
+
+    .bubble {
+        left: 20px !important; /*overiding inline style that pushes of canvas in tablet and mobile*/
+    }
+}
+
+/* tablets only*/
+@media only screen and (min-width:668px) and (max-width:1037px) {
+    .gbtable tbody tr td,
+    .gbtable tbody tr th  {
+        height: 30px;
+    }
+}
+/*mobile only*/
+@media only screen and (min-width:320px) and (max-width:667px) {
+    
+    .gbtable tbody tr td,
+    .gbtable tbody tr th  {
+        height: 50px;
+    }
+}
