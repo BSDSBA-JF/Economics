@@ -1,0 +1,356 @@
+% Problem 1
+\begin{problem}
+	E Verify that the definition of equality on the integers is reflexive, symmetric, and transitive.
+\end{problem}
+\begin{proof}
+First, we show that the equality is reflexive. Consider the integer $a \minus b.$ 
+Notice that $a + b = a + b,$ so $a \minus b = a \minus b.$
+
+Second, we prove that the equality is symmetric. 
+Suppose $a \minus b = a' \minus b'$. 
+Then, $a + b' = a' + b$. 
+Because the equality on the natural numbers is transitive, we have that $a' + b = a + b'$.
+By definition of the equality on the integers, we have that $a' \minus b' = a \minus b$.
+
+Next, we show that the equality on the integers is symmetric. 
+Suppose $a \minus b = c \minus d$ and $c \minus d = e \minus f$.
+Then, $a + d = c + b$ and $c + f = e + d$.
+We add the second equation into the first to get:
+$$a + d + c + f = c + b + e + d.$$
+By the cancellation law of natural numbers for addition, we can cancel out $c$ and $d$ to get:
+$$a + f = b + e.$$
+By the definition of equality on the integers, $a \minus b = e \minus f$.
+\end{proof}
+
+% Problem 2
+\begin{problem}
+E Show the definition of negation on the itegers is well-defined in the sense that if $(a \minus b) = (a' \minus  b')$, then $-(a \minus b) = -(a' \minus b').$
+Hence, equal integfers have equal negations.
+\end{problem}
+\begin{proof}
+Suppose $(a \minus b) = (a' \minus b')$, so $a + b' = a' + b.$ 
+Because addition of the natural numbers is commutative, we have that $b' + a = b + a'.$ 
+Then, by the symmetricality of the equality of the natural numbers, we have $b + a' = b'+a.$
+Then, by the definition of the equality on the integers, we have $b \minus a = b' \minus a'$. 
+Because $b \minus a = -(a \minus b)$ and $b' \minus a' = -(a' \minus b'),$ we get:
+$$-(a \minus b) = -(a' \minus b').$$
+\end{proof}
+
+%Problem 3
+\begin{problem}
+	E Show that $(-1) \times a = -a$ for every integer $a$.
+\end{problem}
+\begin{proof}
+	Recall that $-1 = 0 \minus 1$ and $a = (a \minus 0).$ Notice:
+	\begin{align*}
+		(-1) \times a &= (0 \minus 1) \times (a \minus 0) \\
+		&= (0 \times a + 1 \times 0) \minus (0 \times 0 + 1 \times a) \\
+		&= (0 + 0) \minus (0 + a) \\\
+		&= 0 \minus a \\
+		&= -a
+	\end{align*}
+\end{proof}
+
+\break
+% Problem 4
+\begin{problem}
+	E Prove the remaining identities in Proposition 4.1.6. For all of the laws of algebra for the integers, 
+	let $x = x_1 \minus x_2, y = y_1 \minus y_2, z = z_1 \minus z_2$ be integers, where $x_1, x_2, y_1, y_2, z_1, z_2 \in \mathbb{N}.$
+\end{problem}
+
+% have multicolumns here
+\begin{multicols}{2}
+\begin{proposition}
+	$x + y = y + x$
+\end{proposition}
+\begin{proof}
+	Notice:
+	\begin{align*}
+		x + y &= (x_1 \minus x_2) + (y_1 \minus y_2) \\
+		&= (x_1 + y_1) \minus (x_2 + y_2) \\
+		&= (y_1 + x_1) \minus (y_2  + x_2) \\\
+		&= y + x.
+	\end{align*}
+\end{proof}
+\begin{proposition}
+	$(x+y)+z =x+(y+z)$
+\end{proposition}
+\begin{proof}
+	Notice:
+	\begin{align*}
+		(x+y) + z &= \big( (x_1 \minus x_2) + (y_1 \minus y_2) \big) \\
+		&\quad + (z_1 \minus z_2) \\\
+		&= \big((x_1 + y_1) \minus (x_2 + y_2) \big) \\
+		&\quad + (z_1 \minus z_2)\\
+		&= \big(x_1 + y_1 + z_1\big) \minus \big(x_2 + y_2 + z_2\big) \\
+		&= \big(x_1 + (y_1 + z_1)\big) \\
+		&\quad \minus \big(x_2 + (y_2 + z_2)\big) \\
+		&= \big(x_1 \minus x_2) \\
+		&\quad + \big((y_1 + z_1) \minus (y_2 + z_2)) \\
+		&= x + (y+z).
+	\end{align*}
+\end{proof}
+\begin{proposition}
+	$x+0 = 0+x = x$
+\end{proposition}
+\begin{proof}
+	Recall that $x = (x \minus 0)$ and $0 = (0 \minus 0)$. 
+	Notice:
+	\begin{align*}
+		x + 0 &= (x \minus 0) + (0 \minus 0) \\
+		&= (x + 0) \minus (0 + 0) \\
+		&= x \minus 0 \\
+		&= x.
+	\end{align*}
+	Similarly, because addition is commutative, we have that $0 + x = x.$
+\end{proof}
+
+\begin{proposition}
+	$x + (-x) = (-x) + x = 0$
+\end{proposition}
+\begin{proof}
+	Notice:
+		\begin{align*}
+		x + (-x) &= (x_1 \minus x_2) \\
+		&\quad + (x_2 \minus x_1) \\
+		&= (x_1 + x_2) \minus (x_2 + x_1) \\
+		&= (x_1 + x_2) \minus (x_1 + x_2) \\
+		&= 0.
+		\end{align*}
+Because addition is commutative, we have that $(-x) + x = 0.$
+\end{proof}
+
+\begin{proposition}
+	$xy = yx$
+\end{proposition}
+\begin{proof}
+	Notice:
+	\begin{align*}
+		xy &= (x_1 \minus x_2) \times (y_1 \minus y_2) \\
+		&= (x_1 y_1 + x_2 y_2) \minus (x_1 y_2 + x_2 y_1) \\
+		&= (y_1 x_1 + y_2 x_2) \minus (y_2 x_1 + y_1 x_2) \\
+		&= (y_1 x_1 + y_2 x_2) \minus (y_1 x_2 + y_2 x_1) \\
+		&= yx.
+	\end{align*}
+\end{proof}
+
+\begin{proposition}
+	$(xy)z = x(yz)$.
+\end{proposition}
+\begin{proof}
+	This has already been done in the book.
+\end{proof}
+
+\begin{proposition}
+	$x1 = 1x = x$
+\end{proposition}
+\begin{proof}
+	Recall that $1 = (1 \minus 0).$ Notice:
+	\begin{align*}
+		1x &= (1 \minus 0) \times (x_1 \minus x_2) \\
+		&= (1 x_1 + 0 x_2) \minus (1 x_2 + 0 x_1) \\
+		&= x_1 \minus x_2 \\
+		&= x.
+	\end{align*}
+Bcause multiplication is commutative, $x1 = x.$
+\end{proof}
+\begin{proposition}
+	$x(y+z) = xy +xz$
+\end{proposition}
+\begin{proof}
+	Notice:
+	\begin{align*}
+		x(y + z) &= \big(x_1 \minus x_2 \big) \big((y_1 \minus y_2) + (z_1 \minus z_2) \big) \\
+		&= \big(x_1 \minus x_2 \big) \big((y_1 + z_1) \minus (y_2 + z_2) \big) \\
+		&= \big(x_1(y_1 + z_1) + x_2(y_2 + z_2) \big) \\
+		&\quad \minus \big(x_1(y_2 + z_2) + x_2(y_1 + z_1) \big) \\
+		&= \big(x_1 y_1 + x_1 z_1 + x_2 y_2 + x_2 z_2 \big) \\
+		&\quad \minus \big(x_1 y_2 + x_1 z_2 + x_2 y_1 + x_2 z_1 \big) \\
+		&= \big( (x_1 y_1 + x_2 y_2) + (x_1 z_1 + x_2 z_2) \big) \\
+		&\quad \minus \big((x_1 y_2 + x_2 y_1) + (x_1 z_2 + x_2 z_1) \big) \\
+		&= \big((x_1 y_1 + x_2 y_2) \minus (x_1 y_2 + x_2 y_1) \big) \\
+		&\quad + \big((x_1 z_1 + x_2 z_2) \minus (x_1 z_2 + x_2 z_1) \big) \\
+		&= xy + xz
+	\end{align*}
+\end{proof}
+
+\begin{proposition}
+	$(y + z) x = yx + zx$
+\end{proposition}
+\begin{proof}
+	Notice:
+	\begin{align*}
+		(y + z) x &= x (y + z) \\
+		&= xy + xz \\
+		&= yx + zx.
+	\end{align*}
+\end{proof}
+\end{multicols}
+
+% Problem 5
+\begin{problem}
+	H Let $a, b \in \mathbb{Z}$ Suppose $ab = 0.$ Then, $a = 0$ or $b = 0.$
+\end{problem}
+\begin{proof}
+	Suppose that $ab = 0.$
+	We wil use the trichotomy of the integers on the variable $a$ and the cancellation law of the naturals. 
+	We wil prove the proposition for all three cases of $a = 0$, $a$ is a positive integer, and $a$ is a negative integer.
+	In all these cases, $b$ is held fixed with $b = b_1 \minus b_2, $ where $b_1, b_2 \in \mathbb{N}.$
+	\begin{enumerate}
+		\item Say $a = 0$. Then, the proposition is trivially true.
+		\item Say $a$ is a positive number, so $a$ takes on the form $a = k \minus 0$ for some positive natural number $k.$
+	Then, $(k \minus 0) \times (b_1 \minus b_2) = (k b_1 + 0 b_2) \minus (k b_2 + 0 b_1) = kb_1 \minus k b_2.$
+	Because $ab = 0$, we have that $(k b_1 \minus k b_2) = (0 \minus 0),$ which means that $k b_1 = k b_2.$
+	By the cancellation law of the naturals, we have that $b_1 = b_2$, so $b = 0.$
+		\item Say $a$ is a negative number, so $a$ takes on the form $a = 0 \minus k.$ 
+	Then, $(0 \minus k) \times (b_1 \minus b_2) = (0 b_1 + k b_2) \minus (0 b_2 + k b_1) = k b_2 \minus k b_1.$
+	Because $ab = 0$, we have $(k b_2 \minus k b _1) = 0,$ so $k b_2 = k b_1.$
+	By the cancellation law, we have that $b_2 = b_1,$ so $b = 0.$
+	\end{enumerate}
+\end{proof}
+
+% Problem 6
+\begin{problem}
+	M Let $a, b, c \in \mathbb{Z}$ with $c \neq 0.$ If $ac = bc$, then $a = b.$
+\end{problem}
+There are two ways to prove this. 
+The first proof uses Prop 4.1.8 where it states that integers have no zero divisors. 
+\begin{proof}
+	Suppose $ac = bc.$ Notice:
+	\begin{align*}
+		ac - bc &= 0 && \text{ by subtracting $bc$ to both sides}\\
+		c(a - b) &= 0 && \text{ by distributing $c$}\\
+		a - b &= 0 &&\text{ by Prop. 4.1.8 since $c \neq 0$}\\
+		a &= b. && \text{ by adding $b$ to both sides}
+	\end{align*}
+\end{proof}
+
+The seconed proof uses the trichotomy of the integers on the variable $c,$ and the cancellation law of multiplication for the natural numbers to eventually remove $k$ in the equations.
+\begin{proof}
+	We fix $a = a_1 \minus a_2$ and $b = b_1 \minus b_2.$ Since $c \neq 0,$ we only consider two cases.
+	\begin{enumerate}
+
+		\item Say $c$ is a positive number, so there exists a positive natural number $k$ such that $c = k \minus 0.$ Notice:
+		\begin{align*}
+			ac = bc &\Longrightarrow (a_1 \minus a_2) (k \minus 0) = (b_1 \minus b_2) (k \minus 0) \\
+			&\Longrightarrow k a_1 \minus k a_2 = k b_1 \minus k b_2 \\
+			&\Longrightarrow k a_1 + k b_2 = k b_1 + k a_1 \\
+			&\Longrightarrow k(a_1 + b_2) = k(b_1 + a_2) \\
+			&\Longrightarrow a_1 + b_2 = b_1 + a_2 \\
+			&\Longrightarrow a_1 \minus a_2 = b_1 \minus b_2 \\
+			&\Longrightarrow a = b.
+		\end{align*}
+	\item Say $c$ is a negative number, so $c$ is the negation $-k$ of a positive natural number $k.$
+	In other words, $c = 0 \minus k.$ We get a very similar proof to the second case of $c$ being a positive number. Notice:
+	\begin{align*}
+		ac = bc &\Longrightarrow (a_1 \minus a_2) (0 \minus k) = (b_1 \minus b_2) (0 \minus k) \\
+		&\Longrightarrow k a_2 \minus k a_1 = k b_2 \minus k b_1 \\
+		&\Longrightarrow k(a_2 + b_1) = k (b_2 + a_1) \\
+		&\Longrightarrow a_2 + b_1 = b_2 + a_1 \\
+		&\Longrightarrow a_1 \minus a_2 = b_1 \minus b_2 \\
+		&\Longrightarrow a = b.
+	\end{align*}
+	\end{enumerate}
+\end{proof}
+
+\begin{lemma}\label{lem:k_zero}
+	Let $a, b, k \in \mathbb{Z}.$ If $a = b + k,$ THEN $a = b$ if and only if $k = 0.$
+\end{lemma}
+\begin{proof}
+	Suppose $a = b + k.$ Let us prove the forward direction. 
+	Assume $a = b.$ Then $a = b = b +k.$ 
+	We subtract $b$ to all sides to get $0 = k.$
+	To prove the converse, assume that $k=0.$ Trivially, $a = b + k = b + 0 = b.$
+\end{proof}
+
+% Problem 7
+\begin{problem}
+	E Prove the properties of order for the integers. For all the propositions, let $a, b, c \in \mathbb{Z}.$
+\end{problem}
+\begin{multicols}{2}
+\begin{proposition}
+	$a > b$  if and only if $a - b$ is a positive number.
+\end{proposition}
+\begin{proof}
+	Suppose $a > b.$
+	By definition of order, there exists some natural number $k$ such that $a = b + k$ and $a \neq b.$ 
+	Hence, by Lemma~\ref{lem:k_zero}, $k \neq 0,$ and $k$ therefore is a positive number.
+	In the other direction, suppose $a - b$ is a positive number.
+	Define $k := a - b \neq 0,$ so $a = b + k,$ and hence $a > b.$ 
+	By Lemma~\ref{lem:k_zero}, since $k \neq 0,$ we have that $a \neq b.$
+	Therefore, $a > b.$
+\end{proof}
+\begin{proposition}
+	Addition preserves order. In other words, if $a > b$, then $a + c > b + c.$
+\end{proposition}
+
+\begin{proof}
+	Suppose $a > b.$ Then, $a = b + k$ for some positive number $k.$ 
+	Adding $c$ to both sides of the equation gives $(a + c) = (b + c) + k.$ 
+	Hence, $a + c > b + c.$
+\end{proof}
+
+\begin{proposition}
+	Positive multiplication preserves order. If $a > b$ and $c$ is positive, then $ac > bc.$
+\end{proposition}
+\begin{proof}
+	Suppose $a > b$, so $a = b +k$ for some positive number $k$.
+	Notice $ac = (b + k)c = bc + kc.$ 
+	Since $c \neq 0$ and $k \neq 0$, we have $kc \neq 0.$ 
+	Therefore, $ac > bc.$
+\end{proof}
+
+\begin{proposition}
+	Negation reverses order. If $a > b$, then $-a < -b$ (i.e., $-b > -a$).
+\end{proposition}
+\begin{proof}
+	Suppose $a > b$, so $a = b + k$ for some positive number $k.$ 
+	We take the negation to get $-a = -b -k.$
+	Notice that $-b = -a + k$, so $-b > -a.$
+\end{proof}
+
+\begin{proposition}
+	Order is transitive. If $a > b$ and $b > c$, then $a > c.$
+\end{proposition}
+\begin{proof}
+	Suppose $a > b$ and $b > c$, so $a = b + k$ and $b = c + l$ for positive numbers $k$ and $l$.
+	Notice, $a = b +k = c + l + k = c + (l + k).$
+	Since $l + k$ is also a positive number, we have $a > c.$
+\end{proof}
+
+\begin{proposition}
+	Order is trichotomous. Exactly one of the statements hold $a > b, a < b, $ or $a = b$ is true.
+\end{proposition}
+\begin{proof}
+	Consider any two integers $a$ and $b$. 
+	By the trichotomy of the integers, we have exactly one of these to be true: 
+	$a - b > 0, a - b < 0,$ or $ a - b = 0.$
+	We consider each case and how it relates to the proposition.
+	\begin{enumerate}
+		\item Say $a - b > 0$, so $0 + k = (a - b)$ for some positive number $k$. 
+		By rearrangement, $b + k = a,$ so $a > b.$ 
+		\item Say $a - b < 0$, so $(a-b) + l = 0$ for some positive number $l$.
+		By rearrangement, $a + l = b$, so $a < b.$
+		\item Say $a - b = 0.$ Then, $a = b.$
+	\end{enumerate}
+\end{proof}
+\end{multicols}
+
+\begin{problem}{M}
+	Show that the principle of induction does not apply directly to the integers.
+	More precisely, given an example of a property $P(n)$ pertaining to an integer $n$ such that $P(0)$ is true, and that $P(n)$ implies $P(\successor{n})$ for all integers $n$, but that $P(n)$ is not true for all integers $n$.
+	Thus, induction is not as useful a tool for dealing with the integers as it is with the natural numbers.
+\end{problem}
+\begin{proof}
+	Consider the property $P(n) : n \geq 0.$ 
+	Trivially, $P(0)$ is true. 
+	To show that the inductive hypothesis holds, suppose that $P(n)$ is true for any integer $n$, so $n \geq 0.$
+	Clearly, $\successor{n} \geq 0,$ so $P(\successor{n})$ holds true.
+	However, $P(-1)$ is false. 
+
+	The more interesting \href{https://taoanalysis.wordpress.com/2020/03/22/exercise-4-1-8/}{question though posed by Issa Rice} is
+	``What must the solution space look like?” 
+	More precisely, we can ask ``Is there some simple characterization of every property $P$ that works as a solution to this exercise?"
+	The answer is that for any property $P$, its solution space will look the same as the set of all integers greater than some non-positive integer $m.$
+	In other words, $\{n \in \mathbb{Z} : P(n) \} = \{ n \in \mathbb{Z} : n \geq m \}$ for some $m \leq 0.$
+\end{proof}
