@@ -1,0 +1,234 @@
+\begin{definition}{Addition of Natural Numbers}{addition}
+    Let $m, n \in \mathbb{N}.$ 
+    To add zero to $m$, we define $0 + m := m.$
+    Now, suppose inductively that we have defined how to add $n$ to $m$, so we know what $n + m$ means.
+    Then, we can add $\successor{n}$ to $m$ by defining $(\successor{n}) + m = \successor{(n + m)}.$
+\end{definition}
+
+\begin{problem}{Associativity of Addition}
+    For any natural numbers $a, b, c,$ we have $(a + b) + c = a + (b + c).$
+\end{problem}
+\begin{proof}
+    Keep $b$ and $c$ fixed and induct on $a$. 
+    We begin with the base case of $a = 0,$ so $(0 + b) + c = b + c.$ 
+    Notice also that $0 + (b + c) = b +c.$
+    By the transitivity of equality, $(0 + b) + c = b + c = 0 + (b+ c).$
+    Hence, $(0 + b) + c = 0 + (b + c).$
+
+    Now, suppose inductively that $(a + b) + c = a + (b + c).$ 
+    We'll begin from the right hand to show that that addition is still associative for $S(a)$, so notice:
+    \begin{align*}
+        S(a) + (b + c) &= S\big(a + (b +c) \big) &&\text{by Definition~\ref{def:addition}}\\
+        &= S\big((a + b) + c\big) &&\text{by the Inductive Hypothesis}\\
+        &= S(a + b) + c &&\text{by Definition~\ref{def:addition}}\\
+        &= \big(S(a) + b \big) + c&&\text{by Definition~\ref{def:addition}}.
+    \end{align*}
+\end{proof}
+
+% Problem 2
+\begin{problem}{Unique Predecessor of Positive Natural Numbers}
+    For any positive natural number $a$, there exists a unique natural number $b$ such that $\successor{b} = a.$
+\end{problem}
+\begin{proof}
+    We prove this by induction on $a$. 
+    For the base case of $a = 0,$ this is vacuously true since $a$ is not a positive natural number.
+    Now, suppose inductively that there exists a unique predecessor $b$ such that $\successor{b} = a$.
+    We don't actually need the inductive hypothesis. I am just stating it for formality.
+    However, notice that there exists a predecssor for $\successor{a}.$
+    It is just $a$. 
+    This is also unique by the injectivity of the successor function. 
+\end{proof}
+
+\begin{lemma}
+    \label{lemma:equality}
+    Let $a, b, k \in \mathbb{N}.$
+    If $a = b + k$, THEN $a = b$ if and only if $k = 0.$
+\end{lemma}
+\begin{proof}
+    Suppose $a = b + k.$ 
+    Assume $a = b.$
+    Substituting $a$ for $b$ gives us $a = b + k = a + k.$ 
+    By the cancellation law, we have $a = a +k$ implying $k = 0.$
+    Conversely, suppose $k = 0.$ Trivially, $a = b + k = b + 0 = b.$
+\end{proof}
+\begin{definition}{-  Ordering of the Natural Numbers}{order}
+    Let $n, m \in \mathbb{N}.$ 
+    We say $n \geq m$ or $m \leq n$ if and only if $n = m + a$ for some $a \in \mathbb{N}.$
+    We say $n > m$ or $m < n$ if and only if $n \geq m$ and $n \neq m.$
+\end{definition}
+
+% Problem 3
+\begin{problem}{Properties of Order for Natural Numbers}
+    Show that the properties of order for the natural numbers are true. Let $a, b, c \in \mathbb{N}.$ 
+    Then, the following properties hold:
+\end{problem}
+\begin{multicols}{2}
+\begin{proposition}
+    (Order is reflexive) $a \geq a$
+\end{proposition}
+\begin{proof}
+    Notice $a = a + 0.$ Since $0 \in \mathbb{N},$ $a \geq a.$
+\end{proof}
+
+\begin{proposition}
+    (Order is transitive) If $a \geq b$ and $b \geq c$, then $a \geq c.$
+\end{proposition}
+\begin{proof}
+    Suppose $a \geq b$ and $b \geq c$, so $a = b + k$ and $b = c + l$ for some $k, l \in \mathbb{N}.$
+    Then, we can do substitution to get $a = (c + l) + k = c + (l + k).$ 
+    Since $(l + k) \in \mathbb{N}$, $a \geq c.$
+\end{proof}
+
+
+\begin{proposition}
+    (Order is anti-symmetric.) 
+    If $a \geq b$ and $b \geq a$, then $a = b.$
+\end{proposition}
+
+\begin{proof}
+    Suppose $a \geq b$ and $b \geq a$, so $a = b + k$ and $b = a + l$ for some $k, l \in \mathbb{N}.$ 
+    Substiting $b$ for $a + l$ gives us $a = (a + l) + k$. 
+    By the cancellation law, we get $0 = l + k.$
+    Hence, $l = k = 0.$
+    Because 
+\end{proof}
+
+\begin{proposition}
+    (Addition preserves order.)
+    We have that $a \geq b$ if and only if $a + c \geq b + c.$
+\end{proposition}
+\begin{proof}
+    For the forward direction, suppose $a \geq b$, so $a = b + k$ for some $k \in \mathbb{N}.$
+    Then, $a + c = (b + k) + c = (b + c) + k.$ Hence, $a + c \geq b + c.$
+    Conversely, suppose $a + c \geq b + c.$ 
+    Then, $(a + c) = (b +c) + k$ for some $k \in \N.$
+    By the cancellation law, we have $a = b + k,$ which implies $a \geq b.$
+\end{proof}
+
+\begin{proposition}
+    (Relationship between $\geq$ and $>$.)
+    We have $a < b$ if and only if $\successor{a} \leq b$
+\end{proposition}
+\begin{proof}
+    For the forward direction, suppose $a < b$ (i.e., $b > a$), so $b = a + k$ for some $k \in \mathbb{N}$ and $b \neq a.$
+    By Lemma~\ref{lemma:equality}, we have that since $b \neq a$, $k \neq 0.$
+    Since $k$ is a postive number, there exists a unique natural number $l$ such that $S(l) = k.$
+    Then, $a + k = a + S(l) = S(a + l) = S(a) + l = b.$ Hence, $S(a) \leq b$.
+
+    Conversely, suppose $S(a) \leq b$ (i.e., $b \geq S(a)$), so there exists a $j \in \mathbb{N}$ such that $b = S(a) + j.$
+    Notice $b = S(a) + j = a + S(j).$ Since $S(j) \neq 0,$ we have that $b \neq S(a)$ by Lemma~\ref{lemma:equality}.
+    Therefore, $a < b.$
+\end{proof}
+
+\begin{proposition}
+    (Another Relationship between $\geq$ and $>$.)
+    We have $a < b$ if and only if $b = a + d$ for some positive natural number $d$.
+\end{proposition}
+\begin{proof}
+    For the forward direction, suppose $a < b$ (i.e., $b > a$), so $b = a + d$ for some $d \in \mathbb{N}.$ and $b \neq a.$
+    By Lemma~\ref{lemma:equality}, we have that since $b \neq a$, $d \neq 0.$ 
+    Therefore, $d$ is a positive natural number.
+
+    Conversely, suppose $b = a + d$ for some positive natural number $d$.
+    By Lemma~\ref{lemma:equality}, we have that since $d \neq 0$, $b \neq a.$ 
+    Hence, $a < b.$
+
+\end{proof}
+\end{multicols}
+
+% Problem 4
+\begin{problem}{Propositions to Prove the Trichotomy of Order}
+    Justify the three statements marked `why?'. 
+    For the three statements, let $a, b \in \mathbb{N}.$
+\end{problem}
+
+\begin{multicols}{2}
+\begin{proposition}
+    For any $b$, $0 \leq b.$
+\end{proposition}
+\begin{proof}
+    We induct on $b$. For the base case of $b = 0,$ $0 \leq 0$ since $0 = 0 + 0.$
+    Now, suppose inductively that $0 \leq b,$ so $b = 0 + b.$ 
+    Notice that $S(b) = S(0 + b) = 0 + S(b).$
+    Therefore, $0 \leq S(b).$
+\end{proof}
+
+\begin{proposition}
+    If $a > b$, then $\successor{a} > b.$
+\end{proposition}
+\begin{proof}
+    Suppose $a > b$, so $a = b + k$ for some positive natural number $k$.
+    Then, $S(a) = S(b + k) = b + S(k)$.
+    Since $S(k) \neq 0$ by Axiom 3, $S(k)$ is a positive natural number. 
+    Hence, $S(a) > b.$
+\end{proof}
+
+\begin{proposition}
+    If $a = b$, then $\successor{a} > b.$
+\end{proposition}
+\begin{proof}
+    Suppose $a = b$. 
+    Then, $b = 0 + b$, so $a = 0 + b.$  
+    Notice $S(a) = S(0 + b) = S(0) + b = b + S(0)$.
+    Since $S(0) \neq 0$, $S(a) > b.$
+\end{proof}
+\end{multicols}
+
+% Problem 5
+\begin{problem}{Strong Principle of Induction}
+    Let $m_0 \in \mathbb{N},$ and let $P(m)$ be a property pertaining to an arbitrary $m \in \mathbb{N}$.
+    Suppose that for all $m \geq m_0$, we have the following implication:
+    $$\forall m' \in [m_0, m), \ P(m') \text{ is true} \Longrightarrow P(m)  \text{ is true.}$$
+    Then, we can conclude that $P(m)$ is true for all natural numbers $m \geq m_0.$
+\end{problem}
+\begin{proof}
+    To make what we are proving more clear, we construct a new property $Q(n)$ which has that:
+    $$Q(n) : P(m) \text{ is true for all } m \in [m_0, n)$$
+    For the base case, $Q(0)$ is true because there does not exist any $m' \in [m_0, 0)$. 
+    Hence, $Q(0)$ is vacuously true.
+    We now consider two cases: $n \leq m_0$ and $n > m_0.$
+    \begin{enumerate}
+        \item Say $n < m_0$. 
+        Then, the set $[m_0, n)$ is empty, so $Q(n)$ is vacuously true.
+        Notice also that $\successor{n} \leq m_0$, which means that $[m_0, \successor{n})$ is still empty.
+        Hence, $Q(\successor{n})$ is also vacuously true.
+        \item Say instead that $n \geq m_0.$ 
+        This is the more interesting case, and so we will have to actually start inducting.
+        Suppose that $Q(n)$ is true.
+        Hence, for all $m' \in [m_0, n), \ P(m')$ is true. 
+        By the implication presented in the problem, $P(n)$ must also be true.
+        Because $P(m_0)$ up to $P(n-1)$ is true by the inductive hypothesis and then $P(n)$ is true as proven, we have shown that for all $m' \in [m_0, \successor{n}), \ P(m')$ is true. 
+        This means that $Q(\successor{n})$ is also true.
+    \end{enumerate}
+\end{proof}
+
+% Problem 6
+\begin{problem}{Principle of Backwards Induction}
+    Let $n$ be a natural number, and let $P(m)$ be a property pertaining to the natural numbers such that $P(\successor{m})$ being true implies $P(m)$ being true.
+    Suppose that $P(n)$ is also true.
+    Prove that $P(m)$ is true for all natural numbers $m \leq n$.
+    This is known as the principle of backwards induction.
+\end{problem}
+\begin{proof}
+    This is the informal version that Gemini said was mid. Let $m \in \mathbb{N}$. 
+    Suppose that $m \leq n$, so $n = m + a$ for some $a \in \mathbb{N}$.
+    Then, to prove that $P(m)$ is true, use the implication of $P(\successor{m}) \Longrightarrow P(m)$ presented in the problem $a$ times. 
+    Start with that $P(n)$ is true. 
+    If $n = 0$, then there is no number less than it do backwards induction.
+    Otherwise, there exists a unique natural number $l$ such that $\successor{l} = n.$
+    Hence, $P(n) = P(\successor{l}) \Longrightarrow P(l)$.
+    This can be done $a$ times to eventually reach that $P(m)$ is true.
+\end{proof}
+
+\begin{proof}
+    This is the more formal version. Let us define a new property $Q(a)$ such that
+    $$Q(a) : \text{If } n = m + a \text{ for some } m \in \mathbb{N}, \text{ then } P(m) \text{ is true.}$$
+    For the base case of $a = 0$, this would mean that $n = m + 0 = m.$ 
+    Since we assumed that $P(n)$ is true, $P(m)$ must also be true.
+    Now, assume inductively that $Q(a)$ is true. 
+    Now, we will show that $Q(\successor{a})$ is true. 
+    Suppose $n = m + S(a)$, so $n = S(m) + a$ with $S(m) \in \mathbb{N}$. 
+    Since $Q(a)$ is true, $P(\successor{m})$ is true.
+    With the core impplication of the problem that $P(\successor{m}) \Longrightarrow P(m)$, we have that $P(m)$ must also be true.
+    Hence, $Q(\successor{a})$ is true.
+\end{proof}

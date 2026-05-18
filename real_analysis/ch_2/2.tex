@@ -138,7 +138,7 @@ separator sign none
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DOCUMENT START              																			           %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{\vspace{-2em}Chapter 4: Integers and Rationals}
+\title{\vspace{-2em}Chapter 2: Starting at the Beginning: the Natural Numbers}
 \author{\emph{Analysis I}, by Terrence Tao}
 \date{}
 
@@ -150,28 +150,56 @@ separator sign none
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SECTION A            																			           
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The Integers}
+\section{The Peano Axioms}
+I include here the five Peano Axioms for easy reference. 
+Please note that $\successor{n}$ is the successor function and may also be denoted as $S(n).$ 
+In general, I use $\successor{n}$ if it was mentioned in the definition or for a problem.
+Then, I use $S(n)$ for when I am showing the proof since the grouping of terms are more clear.
 
-\input{4_1/4_1.tex}
-\break
+\begin{multicols}{2}
+\begin{axiom}
+$0$ is a natural number
+\end{axiom}
+
+\begin{axiom}
+If $n \in \mathbb{N}$, then $\successor{n} \in \mathbb{N}$.
+\end{axiom}
+
+\begin{axiom}
+For all $n \in \mathbb{N}$, $\successor{n} \neq 0.$
+\end{axiom}
+
+\begin{axiom}
+(Injectivity of the Successor Function) Let $n, m \in \mathbb{N}$.
+If $\successor{n} = \successor{m}$, then $n = m.$
+\end{axiom}
+
+\begin{axiom}
+(Principle of Mathematical Induction). Let $P(n)$ be any property pertaining to a natural number $n$.
+Suppose that $P(0)$ is true, and suppose that whenever $P(n)$ is true $P(\successor{n})$ is also true.
+Then, $P(n)$ is true for every natural number $n$.
+\end{axiom}
+\end{multicols}
+
+%\input{2_1.tex}
+
+
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SECTION B           																			           
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The Rationals}
-\input{4_2/4_2.tex}
+\section{Addition}
+\input{2_2.tex}
 \break
-% Problem 1
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SECTION C          																			           
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Absolute Value and Exponentials}
-\input{4_3/4_3.tex}
-\break
+\section{Multiplication}
+\input{2_3.tex}
 % Problem 1
 
 \end{document}

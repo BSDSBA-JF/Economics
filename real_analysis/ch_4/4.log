@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  16 MAY 2026 22:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  18 MAY 2026 12:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -660,45 +660,47 @@ Package chngcntr Info: \counterwithout already defined.
 \c@prob=\count339
 \c@proposition=\count340
 \c@thm=\count341
+\c@axiom=\count342
+\c@tcb@cnt@defn=\count343
  (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count342
+\l__color_backend_stack_int=\count344
 \l__pdf_internal_box=\box127
 ) (./4.aux)
 \openout1 = `4.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Info: Redefining \microtypecontext on input line 124.
-Package microtype Info: Applying patch `item' on input line 124.
-Package microtype Info: Applying patch `toc' on input line 124.
-Package microtype Info: Applying patch `eqnum' on input line 124.
-Package microtype Info: Applying patch `footnote' on input line 124.
-Package microtype Info: Applying patch `verbatim' on input line 124.
-LaTeX Info: Redefining \microtypesetup on input line 124.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Info: Redefining \microtypecontext on input line 145.
+Package microtype Info: Applying patch `item' on input line 145.
+Package microtype Info: Applying patch `toc' on input line 145.
+Package microtype Info: Applying patch `eqnum' on input line 145.
+Package microtype Info: Applying patch `footnote' on input line 145.
+Package microtype Info: Applying patch `verbatim' on input line 145.
+LaTeX Info: Redefining \microtypesetup on input line 145.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 124.
+LaTeX Info: Redefining \showhyphens on input line 145.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -739,23 +741,23 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 124.
+Package hyperref Info: Link coloring OFF on input line 145.
 (./4.out) (./4.out)
 \@outlinefile=\write4
 \openout4 = `4.out'.
 
  (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count343
+\scratchcounter=\count345
 \scratchdimen=\dimen294
 \scratchbox=\box128
-\nofMPsegments=\count344
-\nofMParguments=\count345
+\nofMPsegments=\count346
+\nofMParguments=\count347
 \everyMPshowfont=\toks49
-\MPscratchCnt=\count346
+\MPscratchCnt=\count348
 \MPscratchDim=\dimen295
-\MPnumerator=\count347
-\makeMPintoPDFobject=\count348
+\MPnumerator=\count349
+\makeMPintoPDFobject=\count350
 \everyMPtoPDFconversion=\toks50
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -763,13 +765,13 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 126.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 147.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 126.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 147.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -782,13 +784,21 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 [2]
 
-[3]) (./4_2/4_2.tex
+[3])
 
-[4]) (./4_3/4_3.tex
+[4] (./4_2/4_2.tex)
 
-[5])
+[5] (./4_3/4_3.tex
+Overfull \vbox (0.60101pt too high) has occurred while \output is active []
 
-[6] (./4.aux)
+
+Overfull \vbox (0.60101pt too high) has occurred while \output is active []
+
+
+
+[6])
+
+[7] (./4.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -797,18 +807,18 @@ Package rerunfilecheck Info: File `4.out' has not changed.
 (rerunfilecheck)             Checksum: A12B8770B9FEEDD41D017C80389C5A61;424.
  ) 
 Here is how much of TeX's memory you used:
- 27994 strings out of 473190
- 548504 string characters out of 5715801
- 1049540 words of memory out of 5000000
- 50618 multiletter control sequences out of 15000+600000
+ 28030 strings out of 473190
+ 549007 string characters out of 5715801
+ 1045562 words of memory out of 5000000
+ 50653 multiletter control sequences out of 15000+600000
  570827 words of font info for 124 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,14n,121p,1042b,1322s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on 4.pdf (6 pages, 191605 bytes).
+Output written on 4.pdf (7 pages, 197595 bytes).
 PDF statistics:
- 210 PDF objects out of 1000 (max. 8388607)
- 172 compressed objects within 2 object streams
- 80 named destinations out of 1000 (max. 500000)
+ 216 PDF objects out of 1000 (max. 8388607)
+ 177 compressed objects within 2 object streams
+ 81 named destinations out of 1000 (max. 500000)
  24613 words of extra memory for PDF output out of 24883 (max. 10000000)
 

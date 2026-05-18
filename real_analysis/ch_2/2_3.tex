@@ -1,0 +1,125 @@
+\begin{definition}{Multiplication of Natural Numbers}{multiplication}
+    Let $m, n \in \mathbb{N}.$
+    To multiply zero to $m$, we define $0 \times m := 0.$
+    Now, suppose inductively that we have defined how to multiply $n$ to $m$, so we know what $n \times m$ means.
+    Then, we can multiply $\successor{n}$ to $m$ by defining $(\successor{n}) \times m := (n \times m) + m.$
+\end{definition}
+% Problem 1
+\begin{problem_labelled}{Commutativity of Multiplication}{commutativity_mult}
+    Let $n, m \in \mathbb{N}.$ 
+    Then, $n \times m = m \times n.$ 
+\end{problem_labelled}
+For the proof, we need to do two simpler propositions, which will be helpful for proving Problem~\ref{prob:commutativity_mult}.
+\begin{proposition}
+    We have $n \times 0 = 0.$
+\end{proposition}
+\begin{proof}
+    We induct on $n$. 
+    Suppose the base case of $n = 0.$ 
+    By the definition of multiplication, $0 \times 0 = 0.$
+    Now, suppose inductively that $n \times 0 = 0.$
+    Notice $S(n) \times 0 = (n \times 0) + 0 = 0 + 0 = 0.$
+\end{proof}
+
+\begin{proposition}
+    We have $m \times S(n) = (m \times n) + m.$
+\end{proposition}
+\begin{proof}
+    We induct on $m$ while keeping $n$ fixed.
+    Suppose the base case of $m = 0.$
+    Then, the LHS evaluates to 0 because $0 \times S(n) = 0$ by definition of multiplication.
+    The RHS evaluates also to 0 because $(0 \times n) + 0 = 0 + 0 = 0.$ 
+    Hence, the LHS equals to the RHS.
+
+    Now, suppose inductively that $m \times S(n)= (m \times n) + m.$
+    Notice:
+    \begin{align*}
+        S(m) \times S(n) &= m \times S(n) + S(n) &&\text{by Definition~\ref{def:multiplication}} \\
+        &= (m \times n ) + m + S(n) &&\text{by the inductive hypothesis} \\
+        &= (m \times n) + S(m) + n &&\text{by manipulating the successor function} \\
+        &= (m \times n) + n + S(m)  &&\text{by commutativity of addition} \\
+        &= S(m) \times n + S(m) &&\text{by Definition~\ref{def:multiplication}}
+    \end{align*} 
+\end{proof}
+
+We now begin the actual proof for Problem~\ref{prob:commutativity_mult}.
+\begin{proof}
+    We induct on $n$ while keeping $m$ fixed. 
+    For the base case $n = 0,$ the LHS equals to 0 because $0 \times m = 0$ by the definition of multiplication.
+    The RHS equals to 0 because $m \times 0 = 0$ by the first proposition.
+
+    Now, suppose inductively that $n \times m = m \times n.$ Notice:
+    \begin{align*}
+        S(n) \times m &= (n \times m) + m &&\text{by Definition~\ref{def:multiplication}} \\
+        &= (m \times n) + m &&\text{by the inductive hypothesis} \\
+        &= m \times S(n) &&\text{by second proposition} \\
+    \end{align*}
+\end{proof}
+% Problem 2
+\begin{problem}{Positive numbers having no zero divisors}
+    Let $n, m \in \mathbb{N}.$
+    Then, $n \times m = 0$ if and only if $n = 0$ or $m = 0.$
+\end{problem}
+\begin{proof}
+    To prove the forward direction, we induct on $n$ while keeping $m$ fixed.
+    To make the induction we clear, we formulate the property $P(n)$, which is just the contrapositive of the forward direction, as:
+    $$P(n, m): \text{If } n \neq 0 \text{ and } m \neq 0 \text{, then } n \times m \neq 0.$$
+    For the base case, $P(0, m)$ is vacuously true.
+    Now, suppose $P(n, m)$ is inductively true. 
+    We will show that $P(\successor{n}, m)$ is also true. 
+    Notice that $S(n) \times m = (n \times m) + m$
+    Since $n \times m \neq 0$ (and as such is a positive number), $S(n) \times m \neq 0$ (and is thus also a positive number.) 
+
+
+    Conversely, suppose $n = 0$ or $m = 0.$ We consider two cases.
+    Say $n = 0.$ Then, $n \times m = 0 \times m = 0$ by Definition~\ref{def:multiplication}.
+    Say instead that $m = 0.$ Then, $0 \times n = n \times 0 = 0$ by the commutativity of multiplication and Definition~\ref{def:multiplication}.
+    In either case, $n \times m = 0.$
+\end{proof}
+
+% Problem 3
+\begin{problem}{Associativity of Multiplication}
+    For any natural numbers $a, b, c$, we have $a \times (b \times c) = (a \times b) \times c.$
+\end{problem}
+\begin{proof}
+    We induct on $a$ while keeping $b$ and $c$ fixed. 
+    For the base case $a = 0,$ we have for the LHS that $0 \times (b \times c) = 0.$ 
+    For the RHS, we have $(0 \times b) \times c = 0 \times c = 0.$ 
+    The LHS equals the RHS.
+
+    Now, suppose inductively that $a \times (b \times c) = (a \times b) \times c.$ Notice:
+    \begin{align*}
+        S(a) \times (b \times c) &= \big(a \times (b \times c)\big) + (b \times c) \\
+        &= \big((a \times b) \times c\big) + (b \times c) \\
+        &= \big((a \times b) + b\big) \times c \\
+        &= \big(S(a) \times b \big) \times c \\
+    \end{align*}
+
+\end{proof}
+
+% Problem 4
+\begin{problem}{Identity}
+    Prove the identity $(a + b)^2 = a^2 + 2ab + b^2$ for all natural numbers $a, b$.
+\end{problem}
+\begin{proof}
+    We induct on $a$ while keeping $b$ fixed. 
+    For the base case $a = 0,$ observe that for the LHS, $(0 + b)^2 = b^2.$
+    While for the RHS, $0^2 + 2 (0) b + b^2 = b^2$. Hence, the LHS equals the RHS.
+    Now, suppose inductively that $(a + b)^2 = a^2 + 2ab + b^2$. Observe:
+    \begin{align*}
+        \big(S(a) + b \big)^2 &= \big(S(a) + b \big) \big(S(a) + b \big) \\
+        &= S(a) \times \big(S(a) + b \big) + b \times \big(S(a) + b \big) \\
+        &= \big(S(a)\big)^2 + S(a) \times b + b \times S(a) + b^2 \\
+        &= \big(S(a)\big)^2 + S(a) \times b + S(a) \times b + b^2 \\
+        &= \big(S(a)\big)^2 + 2S(a) \times b  + b^2 \\
+    \end{align*}
+\end{proof}
+
+% Problem 5
+\begin{problem}{Euclidean Algorithm}
+    Let $n$ be a natural number and $q$ be a positive natural number. 
+    Then, there exist natural numbers $m$ and $r$ such that $0 \leq r < q$ and $n = mq + r.$
+\end{problem}
+\begin{proof}
+    sh
+\end{proof}
