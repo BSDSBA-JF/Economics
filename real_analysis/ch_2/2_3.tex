@@ -121,5 +121,24 @@ We now begin the actual proof for Problem~\ref{prob:commutativity_mult}.
     Then, there exist natural numbers $m$ and $r$ such that $0 \leq r < q$ and $n = mq + r.$
 \end{problem}
 \begin{proof}
-    sh
+    We induct on $n$ while keeping $q$ fixed.  
+    For the base case of $n = 0$, notice that $0 = 0q + 0 = 0 + 0 = 0.$
+    Now, suppose inductively that there exist natural numbers $m$ and $r$ such that $0 \leq r < q$ and $n = mq + r.$
+    We will now show that for $S(n)$, there exist natural numbers $m'$ and $r'$ such that $0 \leq r' < q$ and $n = m'q + r'.$
+    By Problem 2 of Section A, there exists $p \in \mathbb{N}$ such that $S(p) = q.$ 
+    We now consider two cases of: $r = p$ and $r \neq p$.
+    \begin{enumerate}
+        \item Say $r = p.$ 
+        Notice $S(n) = S(mq + r) = S(mq + p) = mq + S(p) = mq + q = (m + 1)q + 0.$ 
+        Overall, we have that $S(n) = (m + 1)q + 0.$
+        \item Say instead that $r \neq p$. 
+        Notice $S(n) = S(mq + r) = mq + S(r).$ 
+        Since $r \neq p$, we have that $r < p$. 
+        Otherwise, $r \geq p$. 
+        In this case, $r = p$ would cause a contradiction to our original assumption that $r \neq p$.
+        If $r > p,$ this would imply that $r \geq S(p) = q,$ which break our assumption that $r < q.$ 
+        As such, $S(r) \leq p < q.$ Hence, $S(r) < q.$
+    \end{enumerate}
+    In either case, there exist natural numbers $m', r'$ such that $0 \leq r' < q$ and $S(n) = m'q + r'.$
+    
 \end{proof}

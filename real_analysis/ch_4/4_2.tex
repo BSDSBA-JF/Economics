@@ -1,0 +1,406 @@
+\begin{definition}{Rationals ($\mathbb{Q}$)}{rationals}
+    A rational number is an expression of the form $a \quot b$, where $a$ and $b$ are integers and $b$ is non-zero.
+    Two rational numbers are considered equal ($a \quot b = c \quot d$) if and only if $ad = bc.$
+\end{definition}
+
+% Problem 1
+\begin{problem}{Equality on the rationals follow the three axioms}
+	Verify that the definition of equality on the rationals is reflexive, symmetric, and transitive.
+\end{problem}
+\begin{proof}
+    First, we show that the equality is reflexive. 
+    Consider the rational $a \quot b$.
+    Notice that $ab = ba$. 
+    Hence, $a \quot b = a \quot b$.
+
+    Second, we prove that the equality is symmetric. 
+    Suppose $a \quot b = a' \quot b',$ so $ab' = a'b.$
+    We can reverse the right and left hand sides to get $a'b = ab'$.
+    Then, we use the commutativity of multiplication for the integers to get $a'b = b'a$, so $a' \quot b' = a \quot b.$
+\end{proof}
+
+% Problem 2
+\begin{problem}{Addition, multiplication, and negation are well-defined}
+    Let $a \quot b, c \quot d \in \mathbb{Q}$. 
+    We define addition as $a \quot b + c \quot d = (ad + bc) \quot (bd)$;
+    multiplication as $(a \quot b) \times (c \quot d) = (ac) \quot (bd)$;
+    and negation as $-(a \quot b)=(-a) \quot b$.
+\end{problem}
+\begin{proposition}
+    Addition on the rationals is well-defined.
+\end{proposition}
+\begin{proof}
+    This has been done in the book.
+\end{proof}
+
+\begin{proposition}
+    Multiplication on the rationals is well-defined.
+\end{proposition}
+\begin{proof}
+    Suppose $a \quot b = a' \quot b',$ so $a b' = ba'.$
+    We show that $(a \quot b) \times (c \quot d) = (a' \quot b') \times (c \quot d)$.
+    By definition, the LHS is $(ac) \quot (bd)$, and the RHS is $(a'c) \quot (b'd).$
+    Notice:
+    \begin{align*}
+        (a \quot b) \times (c \quot d) = (a' \quot b') \times (c \quot d) &\iff \big((ac) \quot (bd) \big)= \big((a'c) \quot (b'd) \big) &&\text{by definition of multiplication}\\
+        &\iff (ac)(b'd) = (bd)(a'c) && \text{by definition of equality}\\
+        &\iff acb' = ba'c && \text{by cancellation law} \\
+    \end{align*}
+    We now consider two cases: $c = 0$ or $c \neq 0.$ 
+    \begin{enumerate}
+        \item Say $c = 0.$ Then $acb' = ba'c$ implies $0 = 0.$
+        \item Say instead that $c \neq 0.$ Then, by the cancellation law, $ab'=ba'$. This is true by our supposition.
+    \end{enumerate}
+    In either case, we see that the equality of $\big((ac) \quot (bd) \big)= \big((a'c) \quot (b'd) \big)$ holds
+    because the reversible rearrangements lead to $ab' = ba'$, which is true by supposition.
+    The proof holds similarly for the case of $c \quot d = c' \quot d'.$
+
+\end{proof}
+
+\begin{proposition}
+    Negation on the rationals is well-defined.
+\end{proposition}
+\begin{proof}
+    Suppose $a \quot b = a' \quot b',$ so $ab' = ba'.$
+    We show that $-(a \quot b) = -(a' \quot b').$
+    By definition of negation, the LHS is $(-a) \quot b$ while the RHS is $(-a') \quot b'.$ Notice:
+    \begin{align*}
+        -\big(a \quot b \big)= -\big(a' \quot b' \big)  &\iff (-a) \quot b = (-a') \quot b' &&\text{by definition of negation}\\
+        &\iff (-a)b' = b(-a') && \text{by definition of multiplication}\\
+        &\iff ab' = ba' && \text{by cancellation law} \\
+    \end{align*}   
+    In either case, we see that the equality of $-\big(a \quot b \big)= -\big(a' \quot b' \big)$ holds
+    because the reversible rearrangements lead to $ab' = ba'$, which is true by supposition.
+\end{proof}
+
+\break
+% Problem 3
+\begin{problem}{Laws of Algebra for the Rationals}
+    Let $x = x_1 \quot x_2, y = y_1 \quot y_2, z = z_1 \quot z_2$ be rationals where $x_1, x_2, y_1, y_2, z_1, z_2 \in \mathbb{Z}$. 
+    Then, the following laws of algebra hold.
+\end{problem}
+
+
+% have multicolumns here
+\begin{multicols}{2}
+\begin{proposition}
+	$x + y = y + x$
+\end{proposition}
+\begin{proof}
+    Notice:
+    \begin{align*}
+        x + y &= x_1 \quot x_2 + y_1 \quot y_2 \\
+        &= (x_1 y_2 + x_2 y_1) \quot (x_2 y_2) \\
+        &= (y_2 x_1 + y_1 x_2) \quot (y_2 x_2) \\
+        &= (y_1 x_2 + y_2 x_1) \quot (y_2 x_2) \\
+        &= y + x
+    \end{align*}
+\end{proof}
+
+\begin{proposition}
+	$(x+y)+z =x+(y+z)$
+\end{proposition}
+\begin{proof}
+    This has been done in the book.
+\end{proof}
+
+\begin{proposition}
+	$x+0 = 0+x = x$
+\end{proposition}
+\begin{proof}
+    Notice:
+    \begin{align*}
+        x + 0 &= (x_1 \quot x_2) + (0 \quot 1) \\
+        &= (x_1 1 + x_2 0) \quot (x_2 1) \\
+        &= (1 x_1 + 0x_2) \quot (1 x_2) \\
+        &= x_1 \quot x_2 \\
+        &= x
+    \end{align*}
+    Because addition is commutative, we have that $0 + x = x.$
+\end{proof}
+
+\begin{proposition}
+	$x + (-x) = (-x) + x = 0$
+\end{proposition}
+\begin{proof}
+    Notice:
+    \begin{align*}
+        x + (-x) &= (x_1 \quot x_2) + (-(x_1 \quot x_2)) \\
+        &= (x_1 \quot x_2) + ((-x_1) \quot x_2) \\
+        &= (x_1 x_2 + x_2 (-x_1)) \quot (x_2 x_2) \\
+        &= (x_1 x_2 - x_1 x_2) \quot (x_2 x_2) \\
+        &= 0 \quot (x_2 x_2) \\
+        &= 0
+    \end{align*}
+    Because addition is commutative, we have that $(-x) + x = 0.$
+\end{proof}
+
+\begin{proposition}
+	$xy = yx$
+\end{proposition}
+\begin{proof}
+    Notice:
+    \begin{align*}
+        xy &= (x_1 \quot x_2) \times (y_1 \quot y_2) \\
+        &= (x_1 y_1) \quot (x_2 y_2) \\
+        &= (y_1 x_1) \quot (y_2 x_2) \\
+        &= yx 
+    \end{align*}
+\end{proof}
+
+\begin{proposition}
+	$(xy)z = x(yz)$.
+\end{proposition}
+\begin{proof}
+    Notice:
+	\begin{align*}
+        (xy)z &= \big((x_1 \quot x_2) \times (y_1 \quot y_2) \big) \times (z_1 \quot z_2) \\
+        &= \big((x_1 y_1) \quot (x_2 y_2) \big) \times (z_1 \quot z_2) \\
+        &=  \big((x_1 y_1) z_1 \big)\quot \big((x_2 y_2) z_2 \big)\\
+        &= \big(x_1 (y_1 z_1) \quot x_2 (y_2 z_2)\big) \\
+        &= (x_1 \quot x_2) \times \big((y_1 z_1) \quot (y_2 z_2) \big) \\
+        &= (x_1 \quot x_2) \times \big( (y_1 \quot y_2) \times (z_1 \quot z_2) \big) \\
+        &= x(yz)
+    \end{align*}
+\end{proof}
+
+\begin{proposition}
+	$x1 = 1x = x$
+\end{proposition}
+\begin{proof}
+    Notice:
+    \begin{align*}
+        x1 &= (x_1 \quot x_2) \times (1 \quot 1) \\
+        &= (x_1 1) \quot (x_2 1) \\
+        &= (1x_1) \quot (1 x_2) \\
+        &= (x_1) \quot x_2 \\
+        &= x
+    \end{align*}
+    Because multiplication is commutative, $1x = x$.
+\end{proof}
+\begin{proposition}
+	$x(y+z) = xy +xz$
+\end{proposition}
+\begin{proof}
+    There are diminishing returns if I do this.
+\end{proof}
+
+\begin{proposition}
+	$(y + z) x = yx + zx$
+\end{proposition}
+\begin{proof}
+	Notice:
+	\begin{align*}
+		(y + z) x &= x (y + z) \\
+		&= xy + xz \\
+		&= yx + zx.
+	\end{align*}
+\end{proof}
+
+\begin{proposition}
+    If $x$ is non-zero, we have $xx^{-1} = x^{-1}x = 1$
+\end{proposition}
+\begin{proof}
+    Suppose $x$ is non-zero, so $x = a \quot b$ where $a$ and $b$ are non-zero integers. Notice:
+    \begin{align*}
+        xx^{-1} &= (x_1 \quot x_2) \times (x_1 \times x_2)^{-1} \\
+         &= (x_1 \quot x_2) \times (x_2 \times x_1) \\
+         &= (x_1 x_2) \quot (x_2 x_1) \\
+         &= (x_1 x_2) \quot (x_1 x_2) \\
+         &= 1
+    \end{align*}
+\end{proof}
+
+\end{multicols}
+
+\break
+% Problem 4
+\begin{problem}{Trichotomy of $\mathbb{Q}$}
+    Let $x \in \mathbb{Q}.$ We show the trichotomy of $\mathbb{Q}$, where exactly one of the following statements hold:
+    $x = 0,$ $x$ is a positive rational number, or $x$ is a negative rational number.
+\end{problem}
+\begin{proof}
+    Let $x = a \quot b \in Q$ where $a$ is is an integer and $b$ is a non-zero integer.
+    We consider six cases, which are based on the possible combinations of $a$ and $b$ being a positive integer, negative integer, or zero.
+    \begin{enumerate}
+        \item Say $a < 0$ and $b < 0$, so there exist positive natural numbers $a', b'$ such that $a = -a'$ and $b = -b'$.
+        By substitution, $a \quot b = (-a') \quot (-b')$.
+        Notice also that $(-a') \quot (-b') = a' \quot b'$ because $(-a')b'=(-b')a'$. 
+        Hence, $a \quot b = a' \quot b'$ where the RHS is positive because $a', b' > 0$.  
+        Therefore, $a \quot b$ is positive.
+
+        \item Say $a < 0$ while $b > 0$, so there exists a positive natural number $a'$ such that $a = -a'.$
+        Hence, $a \quot b = (-a') \quot b = -(a' \quot b).$ 
+        Because $a \quot b$ is the negation of $a' \quot b$, $a \quot b$ is negative.
+        
+        \item Say $a > 0$ and $b < 0$, so there exists a positive natural number $b'$ such that $b = -b'.$ 
+        By substitution, $a \quot b = a \quot (-b')$.
+        Notice that because $ab' = (-b')(-a)$. we have that $a \quot (-b') = (-a) \quot b'$ by definition of equality.
+        Observe that $(-a) \quot b'$ = $-(a \quot b')$.
+        Therefore, we have a long list of equalities as summarized: 
+        $$a \quot b = a \quot (-b') = (-a) \quot b' = -(a\quot b')$$ 
+        This is all to just say that $a \quot b$ is the negation of the positive rational $a \quot b'.$
+        Hence, $a \quot b$ is negative.
+
+        \item Say $a > 0$ and $b > 0.$ 
+        By the definition of a positive rational, $a \quot b$ is also positive.
+
+        \item Say $a = 0$. 
+        Notice that for any $b \in \mathbb{N} \setminus \{0\},$ we have that $a \quot b = 0 \quot b = 0$
+        We show this through the equivalence eqaution.
+        Notice: 
+        \begin{align*}
+            0 \quot b = 0 \quot 1 &\iff 0 \times 1 = b \times 0 && \text{by definition of equality} \\
+            &\iff 0 = 0 &&\text{by multiplication}
+        \end{align*}
+    \end{enumerate}
+
+    We have shown that for every rational, they are at least either $x =0$, $x > 0$ or $x < 0.$ 
+    However, we now need to show that this is mutually exclusive, so they are also AT MOST $x =0$, $x > 0$ or $x < 0.$ 
+    Suppose $x = 0$, so $x = 0 \quot b.$ 
+    Hence, $a = 0$, so $a$ is not a positive number. Therefore, $x$ cannot be positive.
+    Similarly, suppose for the sake of contradiction that $x = 0$ and $x < 0$. Hence, $x = 0 \quot 1$.
+    Also, $x = (-c) \quot d$ for some positive numbers $c, d$. Then, $0 \quot 1 = (-c) \times d$, so $0d = (-c)1 = -c$.
+    This implies that $c = 0$, but $c$ is positive. A contradiction!
+
+    Suppose for the sake of contradiction that $x < 0$ and $x > 0$, so 
+    $x = a \quot b$ and $x = (-c) \quot d$ for positive numbers $a, b, c, d.$
+    Then, $a \quot b = (-c) \quot d$ implies $ad = b(-c) = -(bc)$.
+    Since $a, b, c, d$ are positive, $ad$ and $bc$ are positive, and $-(bc)$ is negative. 
+    However, since $ad = -(bc)$, we now have that $ad$ is also negative.
+    By the trichotomy of integers, $ad$ can only be at most positive, negative, or zero. A contradiction!
+    
+\end{proof}
+
+These three lemmas are here for my sanity because I really want to show that if you multiply by a positive number, the sign does not change.
+However, if you multiply by a negative number, the sign does flip.
+I just add these lemmas for completeness and especially because I will be using them for the next problem.
+
+\begin{lemma}\label{lem: preservation_mul_positive}
+    Let $x = x_1 \quot x_2$ and $y = y_1 \quot y_2$ be rational numbers, where $x_1, x_2, y_1, y_2$ are integers. 
+    If $y$ is positive, then $xy$ has the same sign as $x$.
+\end{lemma}
+\begin{proof}
+    Suppose $y$ is positive, so $y_1$ and $y_2$ are positive integers.
+    We break the proof down into three cases of $x$ being positive, zero, or negative.
+    \begin{enumerate}
+        \item Say $x$ is positive, so $x_1$ and $x_2$ are also positive. 
+        Then, $xy = (x_1 y_1) \quot (x_2 y_2)$ is also positive because $x_1 y_1$ and $x_2 y_2$ are positive.
+        \item Say $x$ is zero. Then, $xy = 0y = 0.$
+        \item Say $x$ is negative, so there exists a positive rational number $x'$ such that $x = -x'.$ 
+        Then, $xy = (-x')y= -(x'y).$ Since $x'$ and $y$ are positive, it follows from Case (1) that $x'y$ is positive. 
+        Hence, $xy$ is the negation of the positive rational $x'y$.
+        Therefore, $xy$ is negative.
+    \end{enumerate}
+    In the three cases, we have shown that $xy$ has the same sign as $x$.
+\end{proof}
+
+\break
+\begin{lemma}\label{lem:negation_same_multiplication_negative_one}
+    Multiplying by $-1$ is the same as negation for the rationals too (i.e., $\forall x \in \mathbb{Q}, \, (-1) \times x = -x$.)
+\end{lemma}
+
+\begin{proof}
+    Let $x = x_1 \quot x_2 \in \mathbb{Q}$ where $x_1, x_2 \in \mathbb{Z}.$ Notice:
+    \begin{align*}
+        (-1) \times x &= (-1 \quot 1) \times (x_1 \quot x_2) && \text{by substitution of $-1$ and $x$}\\
+        &= (-1 x_1) \quot (1 x_2) && \text{by definition of multiplication on the rationals}\\
+        &= (-x_1) \quot (x_2) && \text{by definition of multiplication on the integers} \\
+        &= -(x_1 \quot x_2) && \text{by definition of negation}\\
+        &= -x &&\text{by substitution}
+    \end{align*}
+\end{proof}
+
+\begin{lemma}\label{lem: minus_minus_positive}
+    The negation of a negative rational number $-(-x)$ is positive.
+\end{lemma}
+\begin{proof}
+    Let $-x$ be a negative rational number.
+    Observe that     $-(-x) = (-1) \times \big((-1) \times x\big) = (-1 \times -1) \times x = 1 \times x = x.$
+\end{proof}
+
+
+% Problem 5
+\begin{problem}{Properties of the order on the rationals}
+    For the properties of the order on the rationals, let $x, y, z \in \mathbb{Q}.$ 
+    Then, the following properties hold.
+\end{problem}
+
+\begin{multicols}{2}
+\begin{proposition}
+    (Order Trichotomy) Exactly one of the three statements hold:
+    (i) $x = y$; (ii) $x < y$; (iii) $x > y.$
+\end{proposition}
+
+\begin{proof}
+    Consider the rational $x - y$. By the law of trichotomy for rationals, $x-y$ can at most be negative, zero, or positive.
+    If $x - y$ is negative, then $x < y.$ If $x -y = 0$, then $x = y.$ Finally, if $x -y$ is positive, then $x >y.$
+    This is mutually exclusive and collectively exhaustive by the law of trichotomy.
+    Hence, exactly one of the statements hold for any rational numbers $x$ and $y$.
+\end{proof}
+
+\begin{proposition}
+    (Order is anti-symmetric) We have that $x < y$ if and only $y >x.$
+\end{proposition}
+\begin{proof}
+    Suppose $x <y$, so $x - y$ is negative.
+    Notice that the negation $-(x - y) = y - x$ is positive by Lemma~\ref{lem: minus_minus_positive}.
+    Hence, $y>x$.
+
+    Conversely, suppose that $y > x$, so $y - x$ is negative.
+    Notice that the negation $-(y-x)=x - y$ is positive by Lemma~\ref{lem: minus_minus_positive}.
+    Hence, $x > y.$
+\end{proof}
+
+\begin{proposition}
+    (Order is transitive) If $x < y$ and $y < z$, then $x < z.$
+\end{proposition}
+\begin{proof}
+    Suppose $x < y$ and $y < z$, so $x - y$ and $y - z$ is negative. 
+    Therefore, there exist positive rational numbers $u$ and $v$ such that $x - y = -u$ and $y - z=-v.$
+    If we add $-u$ to $-v$, we get $(-u) + (-v) = (-1 \times u) + (-1 \times v)$ by Lemma~\ref{lem:negation_same_multiplication_negative_one}.
+    We then use the distributive property to have that $(-1 \times u) + (-1 \times v) = -1(u + v).$ 
+    Overall, we have that $(-u) + (-v) = -(u + v)$.
+    Since $u + v$ is a positive number, we have that $(-u) + (-v)$ is a negative number since it is the negation of $u + v$.
+    
+    Notice also that $(-u) + (-v) = (x - y + y - z)= x - z.$
+    Overall, we now know that $x - z$ is a negative number. Therefore, $x < z.$
+\end{proof}
+
+\begin{proposition}
+    (Addition preserves order) If $x < y$, then $x + z < y + z.$
+\end{proposition}
+\begin{proof}
+    Suppose $x < y$, so $x - y$ is a negative rational number.
+    Notice that $(x + z) - (y + z) = x + z - y - z= x -y$ is also a negative rational number.
+    Therefore, $x + z < y + z.$
+\end{proof}
+
+\begin{proposition}
+    (Positive multiplication preserves order) If $x < y$ and $z$ is positive, then $xz < yz.$
+\end{proposition}
+\begin{proof}
+    Suppose $x <y$ and $z$ is postive. 
+    Then, so $x - y$ is negative. 
+    By Lemma~\ref{lem: preservation_mul_positive}, $(x-y)z = xz - yz$ is still negative.
+    Hence, $xz < yz.$
+\end{proof}
+\end{multicols}
+
+\begin{problem}{Multiplying by a negative number reverses order.}
+    Show that if $x, y, z$ are rational numbers such that $x < y$ and $z$ is negative, then $xz > yz.$
+\end{problem}
+\begin{proof}
+    Let $x, y, z$ be rational numbers. 
+    Suppose $x < y$ and $z$ is negative.
+    By the first supposition, $x -  y$ is negative, so there exists a positive rational $u$ such that $x - y = -u.$
+    By the second supposition, there exists a positive rational number $v$ such that $z = -v.$
+    Notice that $(-u)(-v) = (-1 \times u) (-1 \times v)$ by Lemma~\ref{lem:negation_same_multiplication_negative_one}.
+    Then, we can use the commutativity and associativity of multiplication to get $(-u)(-v) = (-1 \times -1) (uv)=1(uv)=uv.$
+    This is a very long process to just say $(-u)(-v) = uv.$
+    By Lemma~\ref{lem: preservation_mul_positive}, since $u$ and $v$ are both positive, $uv$ is positive. Hence, $(-u)(-v)$, which is equal to $uv$, is also positive.
+
+    Now, observe also that $(-u)(-v) = (x - y)z = xz - yz$.
+    Since we have already previously determined that $(-u)(-v)$ is positive, it follows that $xz - yz$ is positive.
+    Therefore, $xz > yz.$
+\end{proof}

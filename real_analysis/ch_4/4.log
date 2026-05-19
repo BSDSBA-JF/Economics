@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  18 MAY 2026 12:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  20 MAY 2026 01:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -776,7 +776,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 147.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) (./4_1/4_1.tex
+) (./4_1.tex
 
 [1
 
@@ -786,39 +786,46 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 [3])
 
-[4] (./4_2/4_2.tex)
-
-[5] (./4_3/4_3.tex
-Overfull \vbox (0.60101pt too high) has occurred while \output is active []
-
-
-Overfull \vbox (0.60101pt too high) has occurred while \output is active []
+[4] (./4_2.tex
+Overfull \hbox (9.69409pt too wide) detected at line 48
+[]
+ []
 
 
 
-[6])
+[5]
 
-[7] (./4.aux)
+[6]
+
+[7])
+
+[8] (./4_3.tex
+
+[9] [10])
+
+[11] (./4_4.tex)
+
+[12] (./4.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `4.out' has not changed.
-(rerunfilecheck)             Checksum: A12B8770B9FEEDD41D017C80389C5A61;424.
+(rerunfilecheck)             Checksum: 9623E702D857EDA7D5B4BE813292C329;619.
  ) 
 Here is how much of TeX's memory you used:
- 28030 strings out of 473190
- 549007 string characters out of 5715801
- 1045562 words of memory out of 5000000
- 50653 multiletter control sequences out of 15000+600000
- 570827 words of font info for 124 fonts, out of 8000000 for 9000
+ 28145 strings out of 473190
+ 550389 string characters out of 5715801
+ 1045333 words of memory out of 5000000
+ 50689 multiletter control sequences out of 15000+600000
+ 572258 words of font info for 138 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,14n,121p,1042b,1322s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on 4.pdf (7 pages, 197595 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on 4.pdf (12 pages, 243105 bytes).
 PDF statistics:
- 216 PDF objects out of 1000 (max. 8388607)
- 177 compressed objects within 2 object streams
- 81 named destinations out of 1000 (max. 500000)
- 24613 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 311 PDF objects out of 1000 (max. 8388607)
+ 264 compressed objects within 3 object streams
+ 135 named destinations out of 1000 (max. 500000)
+ 28717 words of extra memory for PDF output out of 29859 (max. 10000000)
 
