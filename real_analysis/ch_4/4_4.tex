@@ -1,10 +1,156 @@
+\begin{lemma}\label{lem: euclidean}
+    For the Euclidean Algorithm, let $n$ be a natural number and $q$ be a positive natural number. 
+    Then, there exist \textbf{unique} natural numbers $m$ and $r$ such that $0 \leq r < q$ and $n = mq + r$.
+\end{lemma}
+\begin{proof}
+    For the existance, this has already been done beforehand in Chapter 2C, Problem 5.
+    To prove uniqueness, suppose there exist two representations of $n$ as expressed by $n = m_1 q + r_1$ and $n = m_2 q + r_2,$
+    where as $r_1, r_2 \in [0, q)$ (i.e., $0 \leq r_1, r_2 < q)$).
+
+    Notice that if we subtract these two representations, we get $n - n= m_1 q + r_1 - (m_2 q + r_2) = (m_1 - m_2) q + (r_1 - r_2) = 0.$
+    This implies that $(m_1 - m_2) q = r_2 - r_1.$ 
+    Because $r_1, r_2 < q$, we have that $-q < r_2 - r_1 < q$.
+    Substituting, we get that $-q < (m_1 - m_2) q < q$
+    We can divide the inequalities to get $-1 < m_1 - m_2 < 1.$
+    The only integer in between -1 and 1, exclusive, is 0.
+    Hence, $m_1 - m_2 = 0$ implies $m_1 = m_2$.
+    Moreover, this would also imply $(m_1 - m_2)q = 0q = 0 = r_2 - r_1.$ Then, $r_1 = r_2.$
+    We have now shown that $m_1 = m_2$ and $r_1 = r_2.$ Therefore, $m$ and $q$ are unique. 
+
+
+\end{proof}
+
 \begin{problem}{Interspesing of integers by rationals}
     Let $x$ be a rational number. 
     Then, there exists an integer $n$ such that $n \leq x < n + 1.$
     In fact, this integer is unique (i.e., for each $x$, there is only one $n$ for which $n \leq x < n + 1)$.
-    In particular, there exists a natural number $N$ such that $N > x$ (i.e., there is no succh thing as a rational number which is larger than all the natural numbers.)
+    In particular, there exists a natural number $N$ such that $N > x$ (i.e., there is no such thing as a rational number which is larger than all the natural numbers.)
 \end{problem}
 
 \begin{proof}
+    Let $x = x_1 \quot x_2$ be a rational number where $x_1$ is an integer and $x_2$ is a non-zero integer.
+    We consider three cases by the law of trichotomy on order for the integers.
+    \begin{enumerate}
+        \item Say $x \geq 0.$ Then, $x_1$ is a natural number while $x_2$ is a positive natural number. 
+        Then, by the Euclidean Algorithm, there exist unique natural numbers $m$ and $r$ such that $0 \leq r < x_2$ and $x_1 = m x_2 + r.$
+        Notice that $mx_2 \leq m x_2 + r < (m + 1) x_2.$ Since $x_2$ is a non-zero integer, we can divide the inequality to get $m \leq x < m + 1$.
+        \item Say $x < 0,$ so there exists a positive rational $x'$ such that $x = -x'.$ 
+        Hence, we can use the previous case to determine that there exists an integer $m$ such that $m \leq x' < m + 1.$
+        Multiply all sides by -1 to get $-m \geq -x' > -m - 1$ (i.e., $-m-1 < x \leq -m$). We now consider two sub-cases.
+        \begin{enumerate}
+            \item Say $x = -m.$ Then, take $n:= -m$, so that $n \leq x < n + 1.$
+            \item Say instead that $x \neq -m$. Then, take $n := -m - 1$ (i.e., n + 1 = -m). Then, $-m-1 < x \leq -m$ can rewritten as $n < x \leq n +1$.
+        \end{enumerate}
+    \end{enumerate}
+    In either case, there exists an integer $n$ such that $n \leq x < n +1.$
+    To prove uniqueness, suppose there are two distinct $n \neq m$ integers such that $n \leq x < n+1$ and $m \leq x < m + 1.$
+    Then, assume WLOG that $n < m$. If $m > n$ since we can just repeat what follows by swapping $n = m.$
+    Notice $n < m \leq x < n +1$, which can be simplified into $n < m < n +1.$
+    This implies that $m = n + d$ and $n + 1 = m + d'$ where $d$ and $d'$ are positive.
+    Notice then that $n + 1 = n + d + d'$, which can be simplified into $1 = d + d'.$
+    Since $d$ is a positive number, there exists a natural number $k$ such that $d = k +1.$ 
+    Notice then $1 = k + 1 + d$ can be simplified into $0 = k + d.$
+    Therefore, $d = 0.$ However, this contradicts that $d$ is positive!
+    %with different representations of $x_1 \quot x_2 = \tilde{x}_1 \quot \tilde{x}_2$ where $x_1, \tilde{x}_2$ are integers and $x_2, \tilde{x}_2$ are non-zero integers.
     
+    Finally, to show that there exists a natural number $N$ such that $N > x$, use the just proven problem that there exists an integer $n$ such that $n \leq x < n + 1.$
+    Choose $N := n + 1.$ 
+    Therefore, $N = n + 1 > x.$
+
 \end{proof}
+
+This part is just a reflection on how to do problem solving for this one since I actually got the idea of using the Euclidean algorithm. 
+However, I was still severely lacking with the problem solving aspect because:
+\begin{enumerate}
+    \item I was genuinely just planning to use only the quotient alone. Like in the $n = mq + r$, I was only going to use $m$.
+    This is because my examples were all so small that $m$ could have been used. What I learned is to use bigger and more varied examples so that I can check my assumptions.
+    \item Another weakness is that I could not figure out how to deal with the negative case. 
+    I was having trouble on how to deal with the fact that $-\frac{3}{2}$ is going to have its lower portion as $n=-2$ and not $n=-1.$
+    But, the lower portion (the $n$) of $-\frac{4}{2}$ is $n=2$. Like, what the solution that was presented was smart in just divying up the problem into cases.
+    Hence, don't be afraid to do cases.
+    \item To prove the uniqueness, that was also hard because tbh, proving uniqueness is so hard for me. 
+    There are usually two ways. Suppose you have two different solutions; show they are actually the same.
+    Or, you can also do: suppose they are distinct; make this lead into a contradiction.
+\end{enumerate}
+\begin{definition}{Infinite Descent}
+    A definition: a sequence $a_0, a_1, \dots$ of numbers is said to be in \textit{infinite descent} if we have $a_n > a_{n+1}$ for all natural numbers $n$ (i.e., $a_0 > a_1 > a_2 > \cdots$).
+\end{definition}
+\begin{problem}{Principle of Infinite Descent}
+    Prove the principle of infinite descent.
+\end{problem}
+\begin{proposition}
+    It is not possible to have a sequence of natural numbers which is in infinite descent.
+    (Hint: assume for sake of contradiction that you can find a sequence of natural numbers which is in infinite descent.
+    Since all the $a_n$ are natural numbers. you know that $a_n \geq 0$ for all $n$.
+    Now use induction to show in fact that $a_n \geq k$ for all $k \in \mathbb{N}$ and all $n \in \mathbb{N}$, and obtain a contradiction.)
+\end{proposition}
+\begin{proof}
+    Suppose for the sake of contradiction that there is a sequence $\big(a_n\big)$ that is in infinite descent.
+    We will show that for all natural numbers $k$ and $n$, we have $a_n \geq k.$ We do this by inducting on $k.$
+    For the base case of $k = 0$ notice that for all $n \in \mathbb{N}, \, a_n \geq 0$ because $a_n \in \mathbb{N}$ from Chapter 2, Section A, Problem 4, Proposition 1.
+
+    Now, we will prove the inductive step. 
+    Suppose that for any natural number $n$, $a_n \geq k$. Hence, $a_{n+1} \geq k$. 
+    By the sequence being in infinite descent, we have that $a_n > a_{n+1}.$
+    By the property of transitivity, $a_n > a_{n+1} \geq k$. Then, $a_n > k$ (i.e., $k < a_n.$)
+    Therefore, $k + 1 \leq a_n$ (i.e., $a_n \geq k +1$).
+
+    Now, we will show the contradiction. Let $k := a_0 + 1.$ 
+    This turns $a_0 > k$ to $a_0 > a_0 + 1$, which finally becomes $0 > 1$, clearly a contradiction1
+\end{proof}
+
+Reflection for this one is to use the principle of transitivity and the power of the `for all' logic operator. 
+I did not really appreciate the fact that we had the tool of the `for all $n \in \mathbb{N}$' with me, so I didn't notice that $a_{n + 1} \geq k.$
+ALSO, another example where I did not appreciate the for all is when they let $k := a_0$ since the inductive hypothesis could work for any $k$.
+Finally, the proof for this one is so weird. 
+Like, genuinely, they assume something false (normal for a contradiction). Go on a long tangent of proving through induction, and finally doing a simple contradiction.
+\begin{proposition}
+    Does the principle of inifinite descent work if the sequence $a_1, a_2, a_3, \dots$ is allowed to take integer values instead of natural number values?
+    What about if it is allowed to take positive rational values instead of natural numbers? Explain. 
+\end{proposition}
+\begin{proof}
+    Yes, consider for the integers $a_n = -n$ and for the rationals $a_n = \frac{1}{n}$.
+\end{proof}
+
+\begin{problem}{Formalizing that there does not exist a $x \in \mathbb{Q}$ such that $x^2 = 2.$}
+    We solve each proposition. Let $p, q$ be positive integers.
+\end{problem}
+\begin{proposition}
+    Every natural number is either even or odd, but not both.
+\end{proposition}
+\begin{proof}
+    Every natural number is either even or odd by the Euclidean algorithm with divisor 2 since it states that for every natural number $n$, $n = 2q + r$ where $q$ is an integer and $0 \leq r < 2.$
+    Equivalently, $r = 0, 1.$
+
+    To show a number cannot both be odd and even, suppose for the sake of contradiction that $n$ is even and odd.
+    Then, $n = 2k$ and $n = 2l + 1$ for some natural numbers $k$ and $l$.
+    We consider by trichotomy three cases:
+    \begin{enumerate}
+        \item Say $k < l$.
+        Then, $n = 2k < 2l < 2l + 1$. Therefore, $n \neq 2l + 1$, a contradiction!
+        \item Say $k = l$. Then, $n = 2k = 2l \neq 2l + 1$, a contradiction!
+        \item Say $k > l$ (i.e., $l < k$). Then, $l + 1 \leq k$, so $2l + 2 \leq 2k$.
+        By Proposition 2.2.12e ($a < b \iff a + 1 \leq b$), $2l + 1 < 2l + 2 \leq 2k = n.$ Therefore, $n \neq 2l + 1$, a contradiction!
+    \end{enumerate}
+    In all cases, we had a contradiction due to assuming $n$ was both even and odd.
+    Therefore, a number $n$ can either be only even or odd.
+\end{proof}
+\begin{proposition}
+    If $p$ is odd, then $p^2$ is also odd.
+\end{proposition}
+\begin{proof}
+    Suppose $p$ is odd, so $p = 2k + 1$ for some integer $k$. 
+    Then, $p^2 = (2k + 1)^2 = 4k^2 + 2k + 1 = 2(k^2 + k) + 1.$
+    Therefore, $p^2$ is also odd.
+\end{proof}
+
+\begin{proposition}
+    Since $p^2 = 2q^2$, we have $q < p$.
+\end{proposition}
+\begin{proof}
+    Suppose for the sake of contradiction that $p^2 = 2q^2$ and $q \geq p.$
+    Then, $qp \geq p^2 = 2q^2$. Dividing both sides by $q$ gives $p \geq 2q.$ 
+    Combining the equalities gives us $2q \leq p \leq q.$ 
+    Simplifying gives us $2q \leq q$ which implies $2 \leq 1$, a contradiction!
+\end{proof}
+

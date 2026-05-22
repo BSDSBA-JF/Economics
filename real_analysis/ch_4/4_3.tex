@@ -122,14 +122,21 @@
     Also, $d(x, y) = 0$ if and only if $x = y.$
 \end{proposition}
 \begin{proof}
-    smth
+    Notice that $d(x, y) = \lvert x - y \rvert \geq 0.$ The inequality holds by the non-degeneracy of the absolute value.
+    
+    Supose $d(x, y) = 0,$ so $\lvert x - y \rvert = 0.$ 
+    This implies that $x - y = 0$ by the non-degeneracy of the absolute value.
+    Hence, $x = y$. 
+    Conversely, suppose $x = y$, which implies $x - y = 0$ and consequently $|x - y| = 0.$
+    Hence, $d(x, y) = 0.$
 \end{proof}
 
 \begin{proposition}
     (Symmetry of distance) We have $d(x, y) = d(y, x).$
 \end{proposition}
 \begin{proof}
-    sh 
+    Notice $d(x, y) = \lvert x - y \rvert = \lvert y - x \rvert = d(y, x).$ 
+    The switching of $x$ and $y$ in the second equality is allowed by the multiplicativity of the absolute value. 
 \end{proof}
 
 \begin{proposition}
@@ -137,7 +144,9 @@
 \end{proposition}
 
 \begin{proof}
-    chu
+    Consider the use of the triangle inequality of absolute value on $|(x - y) + (y - z)| \leq |(x- y)| + |y - z|$.
+    The LHS can be simplified into $(x - y) + (y - z) = x - z$, so we have that $|x - z| \leq |(x- y)| + |y - z|.$
+    Therefore, $d(x, z) \leq d(x, y) + d(y, z).$
 \end{proof}
 %\end{multicols}
 
@@ -149,34 +158,57 @@
 \begin{problem}{Properties of $\epsilon$-closeness}
 Let $x, y, z, w \in \mathbb{Q}$. Then, the following properties hold:
 \end{problem}
-\begin{multicols}{2}
 \begin{proposition}
     The number $x$ is $\varepsilon$-close to $y$ for every $\varepsilon > 0$ if and only if  $x = y$.
 \end{proposition} 
 \begin{proof}
-    d
+    For the forward direction, suppose that $x \neq y.$
+    Then, we have that $x - y \neq 0,$ so $\lvert x - y \rvert \neq 0.$ 
+    Let us denote this distance between $x$ and $y$ as the rational $u = u_1 \quot u_2.$
+    Notice that the rational $(u_1 - 1) \quot u_2 < u_1 \quot u_2 = \lvert x - y \rvert$
+    Therefore, there exists the rational $(u_1 - 1) \quot u_2$ such that $x$ is not $\big( (u_1 - 1) \quot u_2 \big)$-close to $y$. 
+
+    Conversely, suppose $x = y$, so $x - y = 0.$
+    Then, for any $\varepsilon > 0$, $d(x, y) = \lvert x - y \rvert = 0 \leq \varepsilon.$
 \end{proof}
+
+ChatGPT said that this was not an elegant proof. Here is what it suggested for the forward direction:
+For the forward direction, we show this to be true by proving its contrapositive.
+Suppose that $x \neq y.$ Then, we have that $x - y \neq 0$, so $\lvert x - y \rvert \neq 0.$
+We denote this distance between $x$ and $y$ as $d(x, y) = \delta.$ 
+Choose $\varepsilon = \frac{\delta}{2}.$ 
+Then, $d(x, y) = \delta > \varepsilon.$
+Therefore, there exists a $\varepsilon$ such that $x$ is not $\varepsilon$-close to $y$.
 
 \begin{proposition}
     Let $\varepsilon > 0.$ 
     If $x$ is $\varepsilon$-close to $y$, then $y$ is $\varepsilon$-close to $x$.
 \end{proposition}
 \begin{proof}
-    s
+    Suppose $x$ is $\varepsilon$-close to $y$. 
+    Then, $d(x, y) \leq \varepsilon.$
+    Since we have shown that the distance function is symmetric, it follows that $d(y, x) = d(x, y) \leq \varepsilon.$
+    Therefore, $y$ is $\varepsilon$-close to $x.$
+    The proof follow similarly for the backwards direction.
 \end{proof}
 
 \begin{proposition}
     Let $\varepsilon, \delta > 0.$ If $x$ is $\varepsilon$-close to $y$, and $y$ is $\delta$-close to $z$, then $x$ and $z$ are $(\varepsilon + \delta)$-close. 
 \end{proposition}
 \begin{proof}
-    chuchu
+    Suppose $x$ is $\varepsilon$-close to $y$, and $y$ is $\delta$-close to $z$.
+    Then $d(x, y) \leq \varepsilon$ and $d(y, z) \leq \delta$.
+    By the triangle inequality, it follows that $d(x, z) \leq d(x, y) + d(y, z) \leq \varepsilon + \delta.$
 \end{proof}
 
 \begin{proposition}
     Let $\varepsilon > 0.$ If $x$ and $y$ are $\varepsilon$-close, they are also $\varepsilon'$-close for every $\varepsilon' > \varepsilon$.
 \end{proposition}
 \begin{proof}
-    chuchu
+    Suppose $x$ and $y$ are $\varepsilon$-close, so $d(x, y) \leq \varepsilon.$
+    Pick any arbitrary rational number $\varepsilon ' > \varepsilon$ (i.e., $\varepsilon < \varepsilon '$).
+    We have by transitivity, $d(x, y) \leq \varepsilon < \varepsilon '$.
+    Therefore, $d(x, y) \leq \varepsilon '$, so $x$ and $y$ are also $\varepsilon '$-close.
 \end{proof}
 
 \begin{proposition}
@@ -190,13 +222,26 @@ Let $x, y, z, w \in \mathbb{Q}$. Then, the following properties hold:
     Let $\varepsilon > 0.$ If $x$ and $y$ are $\varepsilon$-close, and $z$ is non-zero, then $xz$ and $yz$ are $\varepsilon \lvert z \rvert$-close.
 \end{proposition}
 \begin{proof}
-    
+    Suppose $x$ and $y$ are $\varepsilon$-close, and $z$ is non-zero.
+    By the first supposition, $d(x, y) \leq \varepsilon.$ Notice:
+    \begin{align*}
+        d(x, y) \leq \varepsilon &\iff \lvert x - y \rvert \leq \varepsilon &&\text{by definition of distance} \\
+        &\iff \lvert x - y \rvert \lvert z \rvert \leq \varepsilon \lvert z \rvert &&\text{by positive multiplication preserving order} \\
+        &\iff \lvert (x - y) z \rvert \leq \varepsilon \lvert z \rvert &&\text{by multiplicativity of the absolute value} \\
+        &\iff \lvert xz - yz \rvert \leq \varepsilon \lvert z \rvert &&\text{by distributive property} \\
+        &\iff d(xz, yz) \leq \varepsilon \lvert z \rvert &&\text{by distributive property} \\
+    \end{align*}
+    By the definition of distance, we have that $d(x, y) = \lvert x - y \rvert,$
+    so substitution gives us $\lvert x -  y \rvert \leq \varepsilon.$
+    Since positive multiplication preserves order, we have that $\lvert x - y \rvert \lvert z \rvert < \varepsilon \lvert z \rvert$.
 \end{proof}
 
 \begin{proposition}
     Let $\varepsilon, \delta > 0.$ Suppose $x$ and $y$ are $\varepsilon$-close, and $z$ and $w$ are $\delta$-close. Then $xz$ and $yw$ are $(\varepsilon \lvert z \rvert + \delta \lvert x \rvert + \varepsilon \delta)$-close.
 \end{proposition}
-\end{multicols}
+\begin{proof}
+    This has been proven by the book.
+\end{proof}
 
 % Probelm 3
 \begin{problem}{Properties of Exponentiation I}
@@ -296,9 +341,23 @@ Let $x, y$ be rational numbers. Let $n, m$ be integers. The following properties
 \end{proof}
 \end{multicols}
 
+\begin{lemma}\label{lem: two_to_the_n}
+    We have $2^n \geq 1.$
+\end{lemma}
+\begin{proof}
+    We induct on $n$. For the base case of $n = 0$, notice $2^0 = 1 \geq 1.$
+    Now, suppose inductively that $2^n \geq 1.$ We can multiply both sides by 2 to get $2^{n+1} \geq 2 \geq 1.$
+\end{proof}
+
 \begin{problem}{Exponentiation grows faster than linear}
     Prove that $2^N \geq N$ for all positive integers $N$.
 \end{problem}
 \begin{proof}
-    chuchu
+    We induct on $N$. 
+    For the base case of $n = 1$, $2^1 = 2 \geq 1.$
+    Now, suppose inductively that $2^N \geq N$ (so $2^N + 1 \geq N + 1$).
+    Then, $2^{N + 1} = 2^N \times 2 = 2^N + 2^N.$
+    By Lemma~\ref{lem: two_to_the_n}, we have that $2^N \geq 1$ (which implies that $2^N + 2^N \geq 2^N + 1$).
+    From here, we have this chain of implications:
+    $$2^{N+1} = 2^N + 2^N \geq 2^N + 1 \geq N + 1.$$  Therefore, $2^{N+1} \geq N + 1.$
 \end{proof}
