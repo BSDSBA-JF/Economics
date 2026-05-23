@@ -1,0 +1,160 @@
+\documentclass{extarticle}
+% \sloppy
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PACKAGES            																						  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[10pt]{extsizes}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+\usepackage{microtype} 
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{commath}
+\usepackage{multicol}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PROBLEM ENVIRONMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems, breakable, skins}
+\usepackage{chngcntr}
+
+% ----------------------------------------------------
+% 1. Shared problem counter (REAL LaTeX counter)
+% ----------------------------------------------------
+\newcounter{prob}
+\renewcommand{\theprob}{\arabic{prob}}
+\counterwithin{prob}{section}
+
+% ----------------------------------------------------
+% 2. tcolorbox Problem environment (uses same counter)
+% ----------------------------------------------------
+\newtcbtheorem[use counter=prob]{prob}{Problem}
+{enhanced,
+attach boxed title to top left={xshift=4mm, yshift=-2mm},
+colback=blue!5,
+colframe=black,
+colbacktitle=blue!3,
+coltitle=black,
+boxed title style={size=small,colframe=gray},
+fonttitle=\bfseries,
+separator sign none
+}{prob}
+
+% Wrapper (this increments prob safely)
+\newenvironment{problem}[1]{\begin{prob}{- #1}{}}{\end{prob}}
+\newenvironment{problem_labelled}[2]{\begin{prob}{- #1}{#2}}{\end{prob}}
+
+% ----------------------------------------------------
+% 3. Proposition numbering per problem
+% ----------------------------------------------------
+\newtheorem{proposition}{Proposition}
+\counterwithin{proposition}{prob}
+\renewcommand{\theproposition}{\theprob.\arabic{proposition}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% THEOREMS/LEMMAS/ETC.         																			  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{thm}{Theorem}
+\newtheorem*{thm-non}{Theorem}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{corollary}[thm]{Corollary}
+\newtheorem{axiom}{Axiom}
+
+% ----------------------------------------------------
+% Definition environment (green box, like problem)
+% ----------------------------------------------------
+\newtcbtheorem{defn}{Definition}
+{enhanced,
+attach boxed title to top left={xshift=4mm, yshift=-2mm},
+colback=orange!5,
+colframe=black,
+colbacktitle=orange!3,
+coltitle=black,
+boxed title style={size=small,colframe=gray},
+fonttitle=\bfseries,
+separator sign none
+}{def}
+
+\newenvironment{definition}[2]
+{\begin{defn}{- #1}{#2}}
+{\end{defn}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MY COMMANDS   																						  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\bigO}{\mathcal{O}}
+\newcommand{\Real}{\mathcal{Re}}
+\newcommand{\poly}{\mathcal{P}}
+\newcommand{\mat}{\mathcal{M}}
+\DeclareMathOperator{\Span}{span}
+\newcommand{\Hom}{\mathcal{L}}
+\DeclareMathOperator{\Null}{null}
+\DeclareMathOperator{\Range}{range}
+\newcommand{\defeq}{\vcentcolon=}
+\newcommand{\restr}[1]{|_{#1}}
+\newcommand{\successor}[1]{#1 \! +\!\!\!+}
+\newcommand{\aval}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\intset}[2]{\llbracket #1, #2 \rrbracket}
+\newcommand{\inv}[1]{#1^{-1}}
+\newcommand{\rr}{\mathbb{R}}
+\newcommand{\partsof}[1]{\mathcal{P}\left( #1 \right)}
+\newcommand{\minus}{\, \textrm{---}\!\textrm{--} \:}
+\newcommand{\quot}{\, \textrm{/}\!\textrm{/} \:}
+\newcommand{\nn}{\mathbb{N}}
+\newcommand{\zz}{\mathbb{Z}}
+\newcommand{\qq}{\mathbb{Q}}
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\formallimit}[1]{\text{LIM}_{n \to \infty} #1}
+\newcommand{\seq}[2]{(#1)_{n=#2}^\infty}
+\newcommand{\limit}[1]{\lim_{n \to \infty} #1}
+\newcommand{\extrr}{\overline{\rr}}
+\newcommand{\adh}[1]{\overline{#1}}
+\newcommand{\liminfp}[2]{\inf (#1^+_N)_{N=#2}^{\infty}}
+%\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\renewcommand{\P}{\mathbf{P}}
+\newcommand{\Q}{\mathbf{Q}}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\infint}[2]{\underline{\int}_{#2} \, #1}
+\newcommand{\supint}[2]{\overline{\int}_{#2} \, #1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION NUMBERING																				           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand\thesection{\Alph{section}:}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DOCUMENT START              																			           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\vspace{-2em}Chapter 5: The Real Numbers}
+\author{\emph{Analysis I}, by Terrence Tao}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+
+\section{Cauchy Sequences}
+\input{5_1.tex}
+
+\section{Equivalent Cauchy Sequences}
+\input{5_2.tex}
+\break
+
+
+
+\end{document}

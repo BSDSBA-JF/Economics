@@ -1,0 +1,73 @@
+\begin{definition}{(Eventual) $\varepsilon$-steadiness}{epsilon_steadiness}
+    Let $\varepsilon > 0.$ 
+    A sequence $(a_n )_{n=0}^\infty$ is $\varepsilon$-steady
+    if and only if for all natural numbers $j, k$, $d(a_j, a_k) \leq \varepsilon$.
+
+    A sequence $(a_n )_{n=0}^\infty$ is eventualy $\varepsilon$-steady 
+    if and only if the subsequence $(a_n )_{n=N}^\infty$ is $\varepsilon$-steady for some $N \in \mathbb{N}.$
+\end{definition}
+\begin{problem}{Examples and Non-examples of (eventual) $\varepsilon$-steadiness}
+    We show examples and non-examples of (eventual) $\varepsilon$-steady sequences.
+\end{problem}
+\begin{proposition}
+    The sequence $(a_n ) = 10^{-n} = 0.1, 0.01, 0.0001, \dots$ is $0.1$-steady but not $0.01$-steady.
+\end{proposition}
+\begin{proof}
+    For the sequence $(a_n) = 10^{-n} = 0.1, 0.01, 0.0001$, observe that for any positive natural numbers $j, k$ we have that $0 \leq 10^{-j}, 10^{-k} \leq 0.1$
+    Notice that $\lvert 10^{-j} - 10^{-k} \rvert \leq \max \{10^{-j}, 10^{-k}\} \leq 0.1$. Hence, the sequence is 0.1-steady.
+
+    However, the sequence is not 0.01-steady because $\lvert a_1 - a_2 \rvert = \lvert 0.1 - 0.01 \rvert = 0.09 \geq 0.01.$
+\end{proof}
+\begin{proposition}
+    The sequence $(a_n ) = 2^n = 1, 2, 4, 8, \dots$ is not $\varepsilon$-steady for any $\varepsilon > 0$.
+\end{proposition}
+\begin{proof}
+    Suppose for the sake of a contradiciton that the sequence $(a_n) = 2^n = 1, 2, 4, 8, \dots$ is $\varepsilon$-steady for some $\varepsilon _0 > 0$.
+    Then, it would imply that for all positive numbers $j, k$, we have $\lvert 2^j - 2^k \rvert \leq \varepsilon _0.$
+    Pick $k = 0$, so $\lvert 2^j - 1 \rvert \leq \varepsilon_0$ implies $2^j \leq 1 + \varepsilon_0$. Then, by Proposition 4.4.1, we can find a natural number $N$ such that $1 + \varepsilon_0 < N.$ 
+    Hence, we have that $2^j \leq 1 + \varepsilon_0 < N$, so $2^j < N.$
+    If we choose $j := N$, we have that $2^N < N$, which contradicts the fact that $2^N \geq N$ for all natural numbers $N$.
+\end{proof}
+
+\begin{proposition}
+    The sequence $10, 0, 0, 0, \dots$ is not $\varepsilon$-steady for any $\varepsilon < 10$, but is eventually $\varepsilon$-steady for $\varepsilon > 0.$
+\end{proposition}
+\begin{proof}
+    The sequence  $10, 0, 0, 0, \dots$ is not $\varepsilon$-steady for any $\varepsilon < 10$ because we have that $\lvert 10 - 0 \rvert = 10 \not < 10$.
+    However, the sequence is eventually $\varepsilon$-steady if we choose $N = 1$. This is because for all $j, k \geq 1$, we have $\lvert a_j - a_k \rvert = 0 < \varepsilon.$
+\end{proof}
+
+\begin{definition}{Cauchy Sequences}{cauchy_sequence}
+    A sequence $( a_n )_{n=0}^\infty$ is a Cauchy sequence if and only if for all $\varepsilon > 0$, the sequence is eventually $\varepsilon$-steady.
+    In other words, $\forall \varepsilon > 0, \, \exists N \in \mathbb{N}$ such that $j, k \in \mathbb{N} \Longrightarrow d(a_j, a_k) \leq \varepsilon.$
+\end{definition}
+
+\begin{definition}{Boundedness}{bounded}
+    Let $M \geq 0$ be rational. 
+    A finite sequence $a_1, a_2, \dots, a_n$ is bounded by $m$ if and only if $\lvert a_i \rvert \leq M$ for all $1 \leq i \leq n.$
+    An infinite sequence is bounded by $M$ if and only if $\lvert a_i \rvert \leq M$ for all $i \geq 0.$
+    Overall, a sequence is said to be bounded if and only if it is bounded by $M$ for some rational $M \geq 0.$
+\end{definition}
+\begin{proposition}
+    The sequence $(a_n )_{n=0}^\infty = (-1)^{n} \times n = 1, -2 , 3, -4, \dots$ is unbounded.
+\end{proposition}
+\begin{proof}
+    Suppose the sequence $(a_n )_{n=0}^\infty = (-1)^{n} \times n = 1, -2 , 3, -4, \dots$ is bounded, 
+    so there exists a rational number $M \geq 0$ such that $\lvert a_n \rvert = n \leq M$ for all $n \geq 1.$
+    By Proposition 4.4.1, there exists a natural number $N$ such that $N > M$.
+    But by our supposition, we also have that $\lvert a_N \rvert = N \leq M$, a contradiction!
+\end{proof}
+
+\begin{problem}{Cauchy sequences are bounded}
+    Every cauchy sequence $( a_n )_{n=0}^\infty$ is bounded.
+\end{problem}
+\begin{proof}
+    Suppose the sequence $(a_n )_{n=0}^\infty$ is a Cauchy sequence, so we choose $\varepsilon = 1.$
+    Then, there exists a natural number $N$ such that for all $j, k \geq N,$ we have $d(a_j, a_k) = \lvert a_j - a_k \rvert \leq 1.$
+    Then, by the reverse triangle inequality, $\lvert |a_j| - |a_k| \rvert \leq \lvert a_j - a_k \rvert \leq 1$. 
+    By simplifying, we get that $|a_j| \leq 1 + |a_k|.$
+    Pick $k:=N$ so that for any $j \geq N$, we have $|a_j| \leq 1  + |a_N|$.
+    Therefore, for the subsequence of $(a_n)_{n=N}^\infty$, it is bounded by $1 + |a_N|.$
+    Then, for the finite subsequence $(a_n)_{n=0}^N$, there exists $M$ such that $M$ bounds the finite subsequence.
+    Therefore, the whole sequence is bounded by $\max \{1 + |a_N|, M \}$.
+\end{proof}

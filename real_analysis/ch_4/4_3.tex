@@ -202,6 +202,19 @@ Therefore, there exists a $\varepsilon$ such that $x$ is not $\varepsilon$-close
 \end{proof}
 
 \begin{proposition}
+    Let $\varepsilon, \delta > 0.$ If $x$ is $\varepsilon$-close to $y$, and $z$ is $\delta$-close to $w$, then $(x \pm z)$ and $(y \pm w)$ are $(\varepsilon + \delta)$-close. 
+\end{proposition}
+\begin{proof}
+    Suppose $x$ is $\varepsilon$-close to $y$, and $z$ is $\delta$-close to $w$, 
+    so $d(x, y) \leq \varepsilon$ and $d(z, w) \leq \delta.$ 
+    Then, $d(x + z, y + w) = \lvert(x+z) - (y + w) \rvert = \lvert (x - y) + (z - w)\rvert \leq \lvert x - y \rvert + \lvert z - w \rvert \leq d(x, y) + d(z, w) = \varepsilon + \delta.$
+    Therefore, $d(x + z, y + w) \leq \varepsilon + \delta.$
+
+    Notice also for $d(x - z, y - w) = \lvert (x - z) - (y - w) \rvert = \lvert (x - y) + (w - z) \rvert \leq \lvert x - y \rvert + \lvert w - z \rvert = \lvert x - y \rvert + \lvert z - w \rvert \leq d(x, y) + d(z, w) = \varepsilon + \delta$.
+    Therefore, $d(x - z, y - w) \leq \varepsilon + \delta.$
+\end{proof}
+
+\begin{proposition}
     Let $\varepsilon > 0.$ If $x$ and $y$ are $\varepsilon$-close, they are also $\varepsilon'$-close for every $\varepsilon' > \varepsilon$.
 \end{proposition}
 \begin{proof}
@@ -215,7 +228,7 @@ Therefore, there exists a $\varepsilon$ such that $x$ is not $\varepsilon$-close
     Let $\varepsilon > 0.$ If $y$ and $z$ are both $\varepsilon$-close to $x$ and $w$ is between $y$ and $z$ (i.e., $y \leq w \leq z$ or $z \leq w \leq y$), then $w$ is also $\varepsilon$-close to $x$.
 \end{proposition}
 \begin{proof}
-    chuchu
+    TO BE DONE
 \end{proof}
 
 \begin{proposition}

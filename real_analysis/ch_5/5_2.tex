@@ -1,0 +1,59 @@
+\begin{definition}{Equivalent Sequences}{equivalent_sequences}
+    Two sequences $(a_n)_{n=0}^\infty$ and $( b_n)_{n=0}^\infty$ are equivalent 
+    if and only if for every $\varepsilon > 0,$ the sequences are eventually $\varepsilon$-close.
+    In other words, $\exists N \in \mathbb{N}$ such that $\forall n \geq N,$ $\lvert a_n - b_n \rvert < \varepsilon.$
+\end{definition}
+
+\begin{problem}{Equivalence of Cauchy Sequences}
+    If $(a_n)_{n=0}^\infty$ and $( b_n)_{n=0}^\infty$ are equivalent sequences of rationals, then $(a_n)_{n=0}^\infty$ is a Cauchy sequence if and only if $(b_n)_{n=0}^\infty$
+\end{problem}
+
+\begin{proof}
+    Suppose $(a_n)_{n=0}^\infty$ and $( b_n)_{n=0}^\infty$ are equivalent sequences of rationals, and suppose also $(a_n)_{n=0}^\infty$ is a Cauchy Sequence.
+    %Hence,  for any rational $\varepsilon > 0$, there exists a natural number $N_1$ such that if $n \geq N_1$, then $|a_n - b_n| \leq \varepsilon.$
+    %Hence, for any rational $\varepsilon > 0$, there exists a natural number $N_2$ such that if $j, k \geq N_2$, then $|a_j - a_k| \leq \varepsilon.$
+    %Now, we want to show that for any rational $\varepsilon > 0$, there exists a natural number $N_3$ such that if $j, k \geq N_3$, then $|b_j - b_k| \leq \varepsilon.$
+    We now show that $(b_n)_{n=0}^\infty$ is also Cauchy. 
+    Let $\varepsilon > 0$ be given.
+
+    By the equivalence of the two sequences, there exists a natural number $N$ such that if $n \geq N_1$, then $d(b_n, a_n) \leq \frac{\varepsilon}{4}$.
+    Moreover, we also have by $(a_n)_{n=0}^\infty$ being Cauchy that there exists a natural number $M$ such that if $j, k \geq M$, then $d(a_j, a_k) \leq \frac{\varepsilon}{2}$.
+    We choose $L = \max \{N, M \}$ so that we have the useful properties from equivalence and Cauchy sequences.
+    Then, by one of the properties of the distance function (specifically of ``If $d(x, y) \leq \varepsilon$ and $d(z, w) \leq \delta$, then $d(x \pm z, y \pm w) \leq \varepsilon + \delta$''), we have that
+    \begin{align*}
+        d(b_j, a_j) \leq \frac{\varepsilon}{4} \text{ and } d(b_k, a_k) \leq \frac{\varepsilon}{4} &\Longrightarrow d(b_j - b_k, a_j - a_k) \leq \frac{\varepsilon}{2} &&\text{by properties of the distance function} \\
+        &\Longrightarrow \lvert (b_j - b_k) - (a_j - a_k) \rvert \leq \frac{\varepsilon}{2} &&\text{by definition of distance}\\
+        &\Longrightarrow \big\lvert \lvert b_j - b_k \rvert - \lvert a_j - a_k \rvert \big\rvert \leq \frac{\varepsilon}{2} &&\text{by the reverse triangle inequality}\\
+        &\Longrightarrow \lvert b_j - b_k \rvert - \lvert a_j - a_k \rvert  \leq \frac{\varepsilon}{2} && \text{because we only care about being $\leq \frac{\varepsilon}{2}$}\\
+        &\Longrightarrow \lvert b_j - b_k \rvert - \frac{\varepsilon}{2}  \leq \frac{\varepsilon}{2}  &&\text{by $(a_n)_{n=0}^\infty$ being a Cauchy sequence}\\
+        &\Longrightarrow d(b_j, b_k) \leq \varepsilon &&\text{by rearrangement.}
+    \end{align*}
+    For the converse, just switch the two sequences.
+\end{proof} 
+
+\begin{problem}{Boundedness of Equivalent Cauchy Sequences}
+    Let $\varepsilon > 0.$ 
+    Show that if $(a_n)_{n=0}^\infty$ and $( b_n)_{n=0}^\infty$ are eventually $\varepsilon$-close,
+    then $(a_n)_{n=0}^\infty$ is bounded if and only if $(b_n)_{n=0}^\infty$ is bounded.
+\end{problem}
+\begin{proof}
+    Let $\varepsilon > 0$ be given.
+    Suppose the sequences $(a_n)_{n=0}^\infty$ and $(b_n)_{n=0}^\infty$ are eventually $\varepsilon$-close, so they are equivalent sequences.
+    Suppose also that $(a_n)_{n=0}^\infty$ is bounded, so there exists a non-negative rational $M$ such that $|a_i| \leq M$ for all $i \geq 0.$
+    We wish to show that $(b_n)_{n=0}^\infty$ is also bounded.
+
+    Because the two sequnces are eventually $\varepsilon$-close, without loss of generality, we arbitrarily picked $\varepsilon := 1$.
+    We then choose $N$ such that for all $n \geq N$, we have that $|b_n - a_n| \leq 1.$
+    Then, by the reverse triangle inequality, we have that $\big| |b_n| - |a_n| \big| \leq |b_n - a_n| \leq 1.$
+    By transitivity, we get $\big| |b_n| - |a_n| \big| \leq 1$. 
+    By the properties of the absolute value, we have that $-1 \leq |b_n| - |a_n| \leq 1.$ 
+    Focusing on the middle and right hand side of the inequalities, we get get $|b_n| - |a_n| \leq 1.$
+    Adding $|a_n|$ to both sides gives $|b_n| \leq 1 + |a_n|$.
+    Because of $(a_n)_{n=0}^\infty$ being bounded, we have that $|a_n| \leq M$.
+    By substitution, we get $|b_n| \leq 1 + M.$
+    Therefore, for the tail of the infinite subsequence $(b_n)_{n=N}^\infty$, it is bounded by $M + 1$.
+    For the head of the finite subsequence, it is bounded by some $L:= \max \{|b_0|, |b_1|, \dots, |b_{N-1}| \}$.
+    Hence, the overall subsequence $(b_n)_{n=0}^\infty$ is bounded by $\max \{1 + M, L\}.$
+
+    For the converse, just switch the sequences being treated. The logic follows because the distance function is symmetric.
+\end{proof}
