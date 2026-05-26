@@ -1,0 +1,96 @@
+\begin{definition}{Real Numbers $(\mathbb{R})$ }{real_numbers}
+    A real number is defined to be an object of the form $\formallimit{a_n}$, where $(a_n)_{n=0}^\infty$ is a Cauchy sequence of rational numbers.
+    Two real numbers $\formallimit{a_n}$ and $\formallimit{b_n}$ are said to be equal if and only if $(a_n)_{n=0}^\infty$ and $(b_n)_{n=0}^\infty$ are equivalent Cauchy sequences.
+\end{definition}
+
+For all our exercises in this section, let $x = \formallimit{a_n}, y = \formallimit{b_n},$ and $z = \formallimit{c_n}$ be real numbers.
+
+\begin{problem}{Formal limits are well-defined}
+    Our definition of equality follows the three axioms of reflexivity, symmetry, and transitivity.
+\end{problem}
+
+\begin{proof}
+    To show reflexivity, consider the real number $x$. 
+    Let $\varepsilon > 0$ be given. 
+    Choose $N = 0.$ 
+    Then, for all $n \geq N$, we have $|a_n - a_n| = 0 \geq \varepsilon.$
+    Hence, $x = x.$
+
+    To show symmetry, suppose $x = y$, so for all $\varepsilon > 0$, there exists a natural number $N$ such that for all $n \geq N$, we have $d(a_n, b_n) \leq \varepsilon.$
+    By the symmetry of distance function we have $d(b_n, a_n) \leq \varepsilon$. Hence, $y = x.$
+
+    To show reflexivity, let $\varepsilon > 0$ be given. 
+    Suppose $x = y$ and $y = z$, 
+    so there exist natural numbers $N_1$ and $N_2$ 
+    such that for all $n \geq N_1$, we have $d(a_n, b_n) \geq \frac{\varepsilon}{2}$ 
+    and for all $n \geq N_2$, we have $d(b_n, c_n) \geq \frac{\varepsilon}{2}$.
+    Then, by the triangle inequality, we get for all $n \geq \max \{ N_1, N_2 \}$ that
+    $$d(a_n, c_n) \leq d(a_n, b_n) + d(b_n, c_n) \leq \frac{\varepsilon}{2} + \frac{\varepsilon}{2} \leq \varepsilon.$$
+    Hence, $x = z.$
+\end{proof}
+
+\begin{definition}{Multiplication for the Real Numbers}{multiplication}
+    The product $xy$ is defined to be
+    $xy: = \formallimit{a_n b_n}.$
+\end{definition}
+\begin{problem}{Multiplication is well-defined.}
+    Let $x' = \formallimit{a_n'}$. The product $xy$ is a real number. Also, if $x = x'$, then $xy = x'y.$
+\end{problem}
+\begin{proof}
+    Let $\varepsilon > 0$ be given.
+    
+    First, we show that $xy$ is a real number.
+    Let $\delta_1, \delta_2 > 0.$ Since $(a_n)_{n=0}^\infty$ and $(b_n)_{n=0}^\infty$ are Cauchy, 
+    there exist natural numbers $N_1, N_2$ such that 
+    for all $j, k \geq N_1$, we have $d(a_j, a_k) \leq \delta_1$ AND for all $j, k \geq N_2$, we also have that $d(b_j, b_k) \leq \delta_2.$
+    If $j, k \geq \max \{N_1, N_2 \}$, then by Proposition 4.3.7h, we have 
+    $d(a_j b_j, a_k b_k) \leq |a_j| \delta_2 + |b_j| \delta_1 + \delta_1 \delta_2.$
+    
+    Now, our goal is to bound the right hand side of the inequality to be less than or equal to $\varepsilon.$
+    By the property of Cauchy sequences, they are bounded, so there exist positive rationals $M_1$ and $M_2$ such that $|a_i| \leq M_1$ and $|b_i| \leq M_2$ for any natural number $i$.
+    Choose $M = \max \{M_1, M_2 \}$ so that $|a_i| \leq M$ and $|b_i| \leq M$ for any natural number $i$.
+    
+    Now, set $\delta_1 = \delta_2 = \delta$ where $\delta := \min \{1, \frac{\varepsilon}{3M} \}$.
+    Then, we can find a natural number $N$ such that
+    for all $j, k \geq N$, we have $d(a_j, a_k) \leq \delta$ and $d(b_j, b_k) \leq \delta$.
+    (We do not delineate between $N_1$ and $N_2$ for the two sequences. 
+    Instead, we just choose the maximum.)
+    Since $\delta \leq \frac{\varepsilon}{3M}$, we get by rearrangement that $M \delta \leq \frac{\varepsilon}{3}.$
+    Morever, notice that $\delta \leq 1$. 
+    Hence, $\delta ^ 2 \leq \delta \leq \frac{\varepsilon}{3M} \leq \frac{\varepsilon}{3}.$
+    Overall, we have by Proposition 4.3.7h:
+    \begin{align*}
+        d(a_j b_j, a_k b_k) &\leq |a_j| \delta + |b_j| \delta + \delta \delta  \\
+        &\leq M \delta + M \delta + \delta^2 \\
+        &\leq \frac{\varepsilon}{3} + \frac{\varepsilon}{3} + \frac{\varepsilon}{3} \\
+        &\leq \varepsilon
+    \end{align*}
+
+    Second, we show that multiplication is well-defined. 
+    Let $\varepsilon > 0$ be given.  
+    Suppose $x = x'$.
+    By the property of Cauchy sequences, $(b_n)_{n=0}^\infty$ is bounded by some positive rational $M$
+    (i.e., $|b_i| \leq M$ for any natural number $i$).
+    By the equivalence of $x$ and $x'$, we have for $\delta := \frac{\varepsilon}{M}$ that there exists a positive natural number $N$ such that for all $n \geq N$, we have $d(a_n, a _n') \leq \delta.$
+    Then, for all $n \geq N$, we have:
+    \begin{align*}
+        d(a_n b_n, a_n' b_n) &= |a_n b_n - a_n' b_n| \\
+        &= |b_n(a_n - a_n') | \\
+        &= |b_n| |a_n - a_n'| \\
+        &\leq M |a_n - a_n'| \\
+        &\leq M (\frac{\varepsilon}{M}) \\
+        &= \varepsilon
+    \end{align*} 
+    Overall, we have that $d(a_n b_n, a_n' b_n) \leq \varepsilon$ for all $n \geq N$. Therefore, $xy = x'y.$
+\end{proof}
+
+
+\begin{definition}{Negation and Subtraction}{negation_subtraction}
+    We define the negation $-x$ as $-x:=(-1) \times x$.
+    We define the difference of $x$ and $y$ as $x - y := x + (-y) = x + (-1) \times y$.
+\end{definition}
+
+\begin{problem}{Implications of Negation and Subtraction}
+    Show $-\formallimit{a_n} = \formallimit{-a_n}$.
+    Show also $\formallimit{a_n} - \formallimit{b_n} = \formallimit{(a_n - b_n)}$.
+\end{problem}

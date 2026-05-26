@@ -13,12 +13,12 @@ Also, if there are exercises that are not yet completed, most likely I have done
 
 ## Progress Tracker
 
-### Chapter 2 — Completed (100%)
+### Chapter 2: Peano Axioms — Completed (100%)
 - Section 2.1 — 0 / 0  
 - Section 2.2 — 6 / 6  
 - Section 2.3 — 5 / 5  
 
-### Chapter 3 — Not Started (0%)
+### Chapter 3: Set Theory — Not Started (0%)
 - Section 3.1 — 0 / 11  
 - Section 3.2 — 0 / 3  
 - Section 3.3 — 0 / 8  
@@ -26,18 +26,26 @@ Also, if there are exercises that are not yet completed, most likely I have done
 - Section 3.5 — 0 / 13  
 - Section 3.6 — 0 / 10  
 
-### Chapter 4 — In Progress (63%)
+### Chapter 4: Integers and Rationals — In Progress (91% - 20/22)
 - Section 4.1 — 8 / 8  
 - Section 4.2 — 6 / 6  
-- Section 4.3 — 0 / 5  
-- Section 4.4 — 0 / 3  
+- Section 4.3 — 3 / 5  
+- Section 4.4 — 3 / 3  
+
+### Chapter 5: The Real Numbers - In Progress (XX%  - 3/24)
+- Section 5.1 — 1 / 1  
+- Section 5.2 — 2 / 2  
+- Section 5.3 — 2 / 5  
+- Section 5.4 — 0 / 8
+- Section 5.5 - 0 /5
+- Section 5.6 - 0 / 3  
 
 ---
 
 ## Goals
-- Build a rigorous, first-principles understanding of analysis  
-- Write clean, logically sound proofs  
-- Transition comfortably into *Analysis II*
+- Everytime that the author writes "why?", I have to answer it. 
+Hence, there might be more problems in my PDFs than actual exercises.
+- Do all of the exercises for the chapters. If I get lazy, then just do a random 50%.
 
 ---
 
