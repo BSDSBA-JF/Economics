@@ -94,3 +94,93 @@ For all our exercises in this section, let $x = \formallimit{a_n}, y = \formalli
     Show $-\formallimit{a_n} = \formallimit{-a_n}$.
     Show also $\formallimit{a_n} - \formallimit{b_n} = \formallimit{(a_n - b_n)}$.
 \end{problem}
+\begin{proof}
+    For the first equation about negation, notice:
+    \begin{align*}
+        -(\formallimit{a_n}) &= (-1) \times \formallimit{a_n} && \text{by definition of negation}\\
+        &= \formallimit{-1} \times \formallimit{a_n} &&\text{by embedding the rationals to the reals}\\
+        &= \formallimit{\big((-1) \times a_n \big)} &&\text{by definition of multiplication over the reals} \\
+        &= \formallimit{-a_n} &&\text{by the property that $\forall x \in \mathbb{Q}, (-1)\times x = -x$}
+    \end{align*}
+
+    For the second equation about subtraction, notice:
+    \begin{align*}
+        \formallimit{a_n} - \formallimit{b_n} &= \formallimit{a_n} + \formallimit{-b_n} &&\text{by $-\formallimit{a_n} = \formallimit{-a_n}$}\\
+        &= \formallimit{a_n - b_n} && \text{by definition of addition on the reals}
+    \end{align*}
+\end{proof}
+
+\begin{problem}{Embedding the Rational Numbers to the Reals}
+Let $a, b$ be rational numbers.
+Show that $a = b$ if and only if
+$\formallimit{a} = \formallimit{b}$
+(i.e., the Cauchy sequences $(a_n)_{n=0}^\infty = a, a, a, \dots$ and $(b_n)_{n=0}^\infty = b, b, b, \dots$ are equivalent if and only if $a = b$.)
+This allows us to embed the rational numbers inside the real numbers in a well-defined manner.
+\end{problem}
+\begin{proof}
+    Suppose $a = b$. 
+    Let $\varepsilon > 0$ be given.
+    Notice that the sequences $(a_n)_{n=0}^\infty$ and $(b_n)_{n=0}^\infty$ are equivalent 
+    because we can choose $N=0$ so that for all $n \geq N$, we have $|a_n - b_n| = |a - b| = |a -a| = 0 \leq \varepsilon.$
+
+    Conversely, suppose instead that $\formallimit{a_n} = \formallimit{b_n}$. 
+    Recall Proposition 4.3.7a, which states that $\forall x, y \in \mathbb{Q}, \, x = y \iff \forall \varepsilon > 0, d(x, y) \leq \varepsilon$.
+    Because for every $\varepsilon > 0$, there exists a natural number $N$ such that for all $n \geq N$, we have $d(a_n, b_n) = d(a, b) \leq \varepsilon$,
+    we have that $a = b$.
+\end{proof}
+
+\begin{problem}{Boundedness of Equivelent Cauche Sequences (But Again???)}
+Let $(a_n)_{n=0}^\infty$ be a sequence of rational numbers, which is bounded. 
+Let $(b_n)_{n=0}^\infty$ be another sequence of rational numbers, 
+which is also equivalent to $(a_n)_{n=0}^\infty$.
+Show that $(b_n)_{n=0}^\infty$ is also bounded.
+\end{problem}
+\begin{proof}
+    This problem is just a restatement from what has been proven beforehand.
+    Let $\varepsilon > 0.$ 
+    Suppose $(a_n)_{n=0}^\infty$ is equivalent to $(b_n)_{n=0}^\infty$, so the sequences are eventually $\varepsilon$-close.
+    We have already shown beforehand that if $(a_n)_{n=0}^\infty$ and $( b_n)_{n=0}^\infty$ are eventually $\varepsilon$-close,
+    then $(a_n)_{n=0}^\infty$ is bounded if and only if $(b_n)_{n=0}^\infty$ is bounded.
+    Then, because $(a_n)_{n=0}^\infty$ is bounded, then $(b_n)_{n=0}^\infty$ is also bounded.
+\end{proof}
+
+\begin{problem}{$\formallimit{\frac{1}{n}} = 0.$}
+Show that $\formallimit{\frac{1}{n}} = 0.$
+\end{problem}
+\begin{proof}
+    Since we can embed the rational numbers to the reals, we have that $0 = \formallimit{0}$.
+    It would be enough to show that $\formallimit{\frac{1}{n}} = \formallimit{0}.$
+    Now, let $\varepsilon > 0$ be given.
+    Choose a natural number $N$ such that $N > \frac{1}{\varepsilon}$ (i.e., $\frac{1}{N} < \varepsilon$).
+    We know this $N$ exists because of Proposition 4.4.1, which states that $\forall x \in \mathbb{Q}, \exists N \in \mathbb{N}$ such that $N > x$.
+    Notice that for all $n \geq N$, we have $d(\frac{1}{n}, 0) = |\frac{1}{n} - 0| = \frac{1}{n} \leq \frac{1}{N} < \varepsilon$. 
+    Therefore, $\formallimit{\frac{1}{n}} = 0$ because $d(\frac{1}{n}, 0) \leq \varepsilon$ for all $n \geq N.$
+\end{proof}
+
+\begin{definition}{Reciprocation of real numbers}{reciprocation}
+    A sequence $(a_n)_{n=0}^\infty$ of rational numbers is said to be bounded away from zero if and only if
+    there exists a rational number $c > 0$ such that $|a_n| \geq c$ for all $n \geq 1.$
+    
+    Let $x$ be a non-zero real number. 
+    Let $(a_n)_{n=0}^\infty$ be a Cauchy sequence bounded away from zero such that $x = \formallimit{a_n}$ (such a sequence exists by Lemma 5.3.14).
+    Then, we define the reciprocal $x^{-1}$ by the formula $x^{-1} := \formallimit{a_n^{-1}}$.
+    (From Lemma 5.3.15, we know that $x^{-1}$ is a real number.)
+
+    Finally, we define division $x.y$ of two real numbers $x, y$, provided $y$ is non-zero by the formula:
+    $$x/y := x \times y^{-1}.$$
+\end{definition}
+
+\begin{problem}{Multiplicative Inverse}
+    Show that $xx^{-1} = x^{-1}x= 1$.
+\end{problem}
+
+\begin{proof}
+    Notice:
+    \begin{align*}
+        xx^{-1} &= \formallimit{a_n} \times \formallimit{a_n^{-1}} &&\text{by definition of $x$ and $x^{-1}$}\\
+        &= \formallimit{a_n \times a_n^{-1}} &&\text{by definition of multiplication over the reals} \\
+        &= \formallimit{1} &&\text{by the multiplicative inverse of the rationals}\\
+        &= 1 &&\text{by the embedding of $\mathbb{Q}$ to $\mathbb{R}$}
+    \end{align*}
+    Because multiplication is commutative, we also have $x^{-1} x = 1.$
+\end{proof}

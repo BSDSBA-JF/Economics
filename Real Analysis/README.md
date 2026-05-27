@@ -32,10 +32,10 @@ Also, if there are exercises that are not yet completed, most likely I have done
 - Section 4.3 — 3 / 5  
 - Section 4.4 — 3 / 3  
 
-### Chapter 5: The Real Numbers - In Progress (XX%  - 3/24)
+### Chapter 5: The Real Numbers - In Progress (33%  - 8/24)
 - Section 5.1 — 1 / 1  
 - Section 5.2 — 2 / 2  
-- Section 5.3 — 2 / 5  
+- Section 5.3 — 5 / 5  
 - Section 5.4 — 0 / 8
 - Section 5.5 - 0 /5
 - Section 5.6 - 0 / 3  
